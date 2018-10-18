@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MuZest.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
