@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--RegisterVC-->
         <scene sceneID="a82-Ms-Jjf">
             <objects>
-                <viewController id="08j-28-IGk" sceneMemberID="viewController">
+                <viewController id="08j-28-IGk" customClass="RegisterVC" customModule="MuZest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8og-GH-zFz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm password" textAlignment="center" minimumFontSize="25" background="pass_conf" translatesAutoresizingMaskIntoConstraints="NO" id="9JH-qT-KdO">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm password" textAlignment="center" minimumFontSize="25" background="pass_conf" translatesAutoresizingMaskIntoConstraints="NO" id="9JH-qT-KdO" userLabel="passwordConfirm">
                                 <rect key="frame" x="62" y="286" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -110,18 +110,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="hfT-uY-Fqz"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" id="hfT-uY-Fqz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-6y-eTr">
                                 <rect key="frame" x="62" y="446" width="252" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="create_btn"/>
+                                <connections>
+                                    <action selector="registerAction:" destination="08j-28-IGk" eventType="touchDown" id="JZv-DC-KJT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nEu-Pp-sct"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="62x-Iq-agu" id="eAx-By-taa"/>
+                        <outlet property="password" destination="uK7-tu-ere" id="YEE-zl-Xlk"/>
+                        <outlet property="passwordConfirm" destination="9JH-qT-KdO" id="fxD-4F-cac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB8-Oa-Lit" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
