@@ -61,7 +61,7 @@
 		84AF643D472AF31ADF33C5DD /* Pods-MuZestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC159680DF126814644D620D /* Pods_MuZestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12D8724217BB35800E678D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C12D8728217BB39900E678D5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		C12D8728217BB39900E678D5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB3DB6B23B870819A74F6827 /* Pods-MuZest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuZest/Pods-MuZest.debug.xcconfig"; sourceTree = "<group>"; };
 		E49CF821C4E400E1284735D4 /* Pods-MuZestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestUITests/Pods-MuZestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC8DD2E487288988AB517CA0 /* Pods-MuZest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZest/Pods-MuZest.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,6 +318,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MuZest/Pods-MuZest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -326,6 +327,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

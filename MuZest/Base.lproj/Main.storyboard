@@ -129,6 +129,7 @@
                         <outlet property="email" destination="62x-Iq-agu" id="eAx-By-taa"/>
                         <outlet property="password" destination="uK7-tu-ere" id="YEE-zl-Xlk"/>
                         <outlet property="passwordConfirm" destination="9JH-qT-KdO" id="fxD-4F-cac"/>
+                        <outlet property="username" destination="CId-ZI-AlD" id="c3A-f5-Qky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB8-Oa-Lit" userLabel="First Responder" sceneMemberID="firstResponder"/>
