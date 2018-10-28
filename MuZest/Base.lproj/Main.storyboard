@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="register_btn"/>
                                 <connections>
-                                    <segue destination="08j-28-IGk" kind="show" id="tNf-DS-HmH"/>
+                                    <segue destination="08j-28-IGk" kind="show" identifier="toRegister" id="tNf-DS-HmH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMG-KD-tiy">
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="133.5832083958021"/>
         </scene>
-        <!--RegisterVC-->
+        <!--Register View-->
         <scene sceneID="a82-Ms-Jjf">
             <objects>
-                <viewController id="08j-28-IGk" customClass="RegisterVC" customModule="MuZest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="08j-28-IGk" customClass="RegisterView" customModule="MuZest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8og-GH-zFz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +110,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" id="hfT-uY-Fqz"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toAuth" id="hfT-uY-Fqz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-6y-eTr">
@@ -118,7 +118,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="create_btn"/>
                                 <connections>
-                                    <action selector="registerAction:" destination="08j-28-IGk" eventType="touchDown" id="JZv-DC-KJT"/>
+                                    <action selector="regButtonClicked:" destination="08j-28-IGk" eventType="touchUpInside" id="zmk-2F-Wne"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,10 +126,10 @@
                         <viewLayoutGuide key="safeArea" id="nEu-Pp-sct"/>
                     </view>
                     <connections>
-                        <outlet property="email" destination="62x-Iq-agu" id="eAx-By-taa"/>
-                        <outlet property="password" destination="uK7-tu-ere" id="YEE-zl-Xlk"/>
-                        <outlet property="passwordConfirm" destination="9JH-qT-KdO" id="fxD-4F-cac"/>
-                        <outlet property="username" destination="CId-ZI-AlD" id="c3A-f5-Qky"/>
+                        <outlet property="emailTextField" destination="62x-Iq-agu" id="HuP-WU-zNM"/>
+                        <outlet property="passwordConfirmTextField" destination="9JH-qT-KdO" id="ySR-K7-blD"/>
+                        <outlet property="passwordTextField" destination="uK7-tu-ere" id="iGX-Ov-4P9"/>
+                        <outlet property="usernameTextField" destination="CId-ZI-AlD" id="V9F-Ji-b7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB8-Oa-Lit" userLabel="First Responder" sceneMemberID="firstResponder"/>
