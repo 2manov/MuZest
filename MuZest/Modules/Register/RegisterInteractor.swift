@@ -22,23 +22,22 @@ class RegisterInteractor : RegisterInteractorProtocol {
         self.databaseRefer = Database.database().reference()
     }
     
-    func checkLogin(with login: String) -> Bool {
+    func checkUsername(with username: String) -> Bool {
         
-        if login.isEmpty {
+        if username.isEmpty {
             self.presenter.showAlertToView(with: "Username is empty")
             return false
         }
 
-        if !isLoginCorrect(in: login) {
+        if !isUsernameCorrect(in: username) {
             self.presenter.showAlertToView(with: "Username is incorrect. Please use only english words, numbers and '_'")
             return false
         }
-        
         var isUserExist : Bool = false
         
-        databaseRefer.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+        self.databaseRefer.child("users/"+username).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if snapshot.hasChild(login){
+            if snapshot.exists(){
                 isUserExist = true
             }else{
                 isUserExist = false
@@ -54,13 +53,13 @@ class RegisterInteractor : RegisterInteractorProtocol {
         
     }
     
-    func isLoginCorrect(in login: String) -> Bool {
+    func isUsernameCorrect(in username: String) -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "[^a-zA-Z0-9_]")
-            let results = regex.matches(in: login, range: NSRange(login.startIndex..., in: login))
+            let results = regex.matches(in: username, range: NSRange(username.startIndex..., in: username))
             
             let res = results.compactMap {
-                Range($0.range, in: login).map { String(login[$0]) }
+                Range($0.range, in: username).map { String(username[$0]) }
             }
             return res.isEmpty ? true : false
         }
@@ -86,7 +85,7 @@ class RegisterInteractor : RegisterInteractorProtocol {
     
     func registerAction(with regData: Dictionary<String, String>) {
         
-        if self.checkLogin(with: regData["username"]!) {
+        if self.checkUsername(with: regData["username"]!) {
             if regData["password"] != regData["passwordConfirm"] {
                 self.presenter.showAlertToView(with: "Please re-type password")
             } else {
