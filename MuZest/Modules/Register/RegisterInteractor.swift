@@ -13,15 +13,20 @@ import FirebaseDatabase
 
 class RegisterInteractor : RegisterInteractorProtocol {
 
+    
     weak var presenter: RegisterPresenterProtocol!
     var databaseRefer: DatabaseReference!
     var databaseHandle: DatabaseHandle!
+    
+    
     
     required init(presenter: RegisterPresenterProtocol) {
         self.presenter = presenter
         self.databaseRefer = Database.database().reference()
     }
     
+   
+
     func checkUsername(with username: String) -> Bool {
         
         if username.isEmpty {
@@ -33,27 +38,12 @@ class RegisterInteractor : RegisterInteractorProtocol {
             self.presenter.showAlertToView(with: "Username is incorrect. Please use only english words, numbers and '_'")
             return false
         }
-        var isUserExist : Bool = false
         
-        self.databaseRefer.child("users/"+username).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if snapshot.exists(){
-                isUserExist = true
-            }else{
-                isUserExist = false
-            }
-        })
-        
-        if isUserExist {
-            self.presenter.showAlertToView(with: "Username is already used")
-            return false
-        } else {
-            return true
-        }
-        
+        return true
     }
     
     func isUsernameCorrect(in username: String) -> Bool {
+        
         do {
             let regex = try NSRegularExpression(pattern: "[^a-zA-Z0-9_]")
             let results = regex.matches(in: username, range: NSRange(username.startIndex..., in: username))
@@ -82,10 +72,28 @@ class RegisterInteractor : RegisterInteractorProtocol {
         }
     }
     
+    func isUsernameExist(with username : String, completion: @escaping (Bool?) -> Void){
+        
+        self.databaseRefer.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            completion(snapshot.hasChild(username))
+        })
+        
+    }
     
     func registerAction(with regData: Dictionary<String, String>) {
         
-        if self.checkUsername(with: regData["username"]!) {
+        var exist : Bool = false
+        
+        if !self.checkUsername(with: regData["username"]!) {
+            return
+        }
+        
+        isUsernameExist(with: regData["username"]!) {(result: Bool?) in
+            exist = result ?? true
+            
+        }
+        
+        if !exist {
             if regData["password"] != regData["passwordConfirm"] {
                 self.presenter.showAlertToView(with: "Please re-type password")
             } else {
@@ -98,8 +106,10 @@ class RegisterInteractor : RegisterInteractorProtocol {
                     }
                 }
             }
+        } else {
+            self.presenter.showAlertToView(with: "Username is already exist")
+            return
         }
-        
     
     }
     
