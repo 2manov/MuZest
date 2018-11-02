@@ -31,8 +31,6 @@ protocol RegisterRouterProtocol: class {
     
     func performForSegue(with nameSegue : String)
     
-//    func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    
 }
 
 protocol RegisterInteractorProtocol: class {
@@ -48,6 +46,7 @@ protocol RegisterPresenterProtocol: class {
     func configureView()
     func backButtonClicked()
     func regButtonClicked()
+    func regSuccess()
     func showAlertToView(with error: String)
     
 }
