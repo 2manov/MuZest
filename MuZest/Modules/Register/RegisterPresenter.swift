@@ -31,10 +31,13 @@ class RegisterPresenter : RegisterPresenterProtocol{
                                          "passwordConfirm": view.passwordConfirm ?? "",
                                          "email": view.email ?? ""]
         interactor.registerAction(with : regData)
+    }
+    
+    func regSuccess(){
         router.performForSegue(with : "toAuth")
     }
     
     func backButtonClicked() {
-        
+        router.performForSegue(with : "toAuth")
     }
 }

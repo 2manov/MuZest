@@ -72,45 +72,37 @@ class RegisterInteractor : RegisterInteractorProtocol {
         }
     }
     
-    func isUsernameExist(with username : String, completion: @escaping (Bool?) -> Void){
-        
-        self.databaseRefer.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            completion(snapshot.hasChild(username))
-        })
-        
-    }
-    
     func registerAction(with regData: Dictionary<String, String>) {
-        
-        var exist : Bool = false
         
         if !self.checkUsername(with: regData["username"]!) {
             return
         }
         
-        isUsernameExist(with: regData["username"]!) {(result: Bool?) in
-            exist = result ?? true
+        self.databaseRefer.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             
-        }
-        
-        if !exist {
-            if regData["password"] != regData["passwordConfirm"] {
-                self.presenter.showAlertToView(with: "Please re-type password")
-            } else {
-                Auth.auth().createUser(withEmail: regData["email"]!, password: regData["password"]!){ (authResult, error) in
-                    if error == nil {
-                        self.saveUserInfo((authResult?.user)!, withUsername: regData["username"]!)
+            if !snapshot.hasChild(regData["username"]!) {
+                
+                if regData["password"] != regData["passwordConfirm"] {
+                    DispatchQueue.main.async {
+                        self.presenter.showAlertToView(with: "Please re-type password")
                     }
-                    else{
-                        self.presenter.showAlertToView(with: (error?.localizedDescription)!)
-                    }
+                } else {
+                    Auth.auth().createUser(withEmail: regData["email"]!, password: regData["password"]!){ (authResult, error) in
+                            if error == nil {
+                                self.saveUserInfo((authResult?.user)!, withUsername: regData["username"]!)
+                                self.presenter.regSuccess()
+                            }
+                            else {
+                                DispatchQueue.main.async {
+                                    self.presenter.showAlertToView(with: (error?.localizedDescription)!)
+                                }
+                            }
+                        }
                 }
+            } else {
+                self.presenter.showAlertToView(with: "Username is already exist")
             }
-        } else {
-            self.presenter.showAlertToView(with: "Username is already exist")
-            return
-        }
-    
+            
+        })
     }
-    
 }
