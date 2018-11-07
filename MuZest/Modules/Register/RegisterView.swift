@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterView: UIViewController, RegisterViewProtocol {
+class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol {
     
     var presenter: RegisterPresenterProtocol!
     let configurator: RegisterConfiguratorProtocol = RegisterConfigurator()
@@ -18,6 +18,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
     var passwordConfirm: String?
     var email: String?
     
+    @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var usernameTextField: UITextField?
     @IBOutlet weak var passwordTextField: UITextField?
     @IBOutlet weak var passwordConfirmTextField: UITextField?
@@ -46,4 +47,7 @@ class RegisterView: UIViewController, RegisterViewProtocol {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func textFieldDidBeginEditing(emailTextField: UITextField) {
+        ScrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+    }
 }
