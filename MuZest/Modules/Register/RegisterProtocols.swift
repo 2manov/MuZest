@@ -5,7 +5,6 @@
 //  Created by Denis Borodaenko on 28/10/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
@@ -31,8 +30,6 @@ protocol RegisterRouterProtocol: class {
     
     func performForSegue(with nameSegue : String)
     
-//    func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    
 }
 
 protocol RegisterInteractorProtocol: class {
@@ -48,7 +45,7 @@ protocol RegisterPresenterProtocol: class {
     func configureView()
     func backButtonClicked()
     func regButtonClicked()
+    func regSuccess()
     func showAlertToView(with error: String)
     
 }
-

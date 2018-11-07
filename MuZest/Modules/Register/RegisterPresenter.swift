@@ -5,7 +5,6 @@
 //  Created by Denis Borodaenko on 28/10/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
-
 import Foundation
 
 class RegisterPresenter : RegisterPresenterProtocol{
@@ -31,10 +30,13 @@ class RegisterPresenter : RegisterPresenterProtocol{
                                          "passwordConfirm": view.passwordConfirm ?? "",
                                          "email": view.email ?? ""]
         interactor.registerAction(with : regData)
+    }
+    
+    func regSuccess(){
         router.performForSegue(with : "toAuth")
     }
     
     func backButtonClicked() {
-        
+        router.performForSegue(with : "toAuth")
     }
 }
