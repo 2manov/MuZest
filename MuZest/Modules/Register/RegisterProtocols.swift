@@ -5,7 +5,6 @@
 //  Created by Denis Borodaenko on 28/10/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
@@ -50,4 +49,3 @@ protocol RegisterPresenterProtocol: class {
     func showAlertToView(with error: String)
     
 }
-

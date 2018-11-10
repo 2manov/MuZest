@@ -85,6 +85,21 @@ class RegisterInteractor : RegisterInteractorProtocol {
                 if regData["password"] != regData["passwordConfirm"] {
                     DispatchQueue.main.async {
                         self.presenter.showAlertToView(with: "Please re-type password")
+<<<<<<< HEAD
+=======
+                    }
+                } else {
+                    Auth.auth().createUser(withEmail: regData["email"]!, password: regData["password"]!){ (authResult, error) in
+                        if error == nil {
+                            self.saveUserInfo((authResult?.user)!, withUsername: regData["username"]!)
+                            self.presenter.regSuccess()
+                        }
+                        else {
+                            DispatchQueue.main.async {
+                                self.presenter.showAlertToView(with: (error?.localizedDescription)!)
+                            }
+                        }
+>>>>>>> design_fix
                     }
                 } else {
                     Auth.auth().createUser(withEmail: regData["email"]!, password: regData["password"]!){ (authResult, error) in
