@@ -5,13 +5,14 @@
 //  Created by Denis Borodaenko on 28/10/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
+
 import Foundation
 import Firebase
 import FirebaseDatabase
 
 
 class RegisterInteractor : RegisterInteractorProtocol {
-    
+
     
     weak var presenter: RegisterPresenterProtocol!
     var databaseRefer: DatabaseReference!
@@ -24,15 +25,15 @@ class RegisterInteractor : RegisterInteractorProtocol {
         self.databaseRefer = Database.database().reference()
     }
     
-    
-    
+   
+
     func checkUsername(with username: String) -> Bool {
         
         if username.isEmpty {
             self.presenter.showAlertToView(with: "Username is empty")
             return false
         }
-        
+
         if !isUsernameCorrect(in: username) {
             self.presenter.showAlertToView(with: "Username is incorrect. Please use only english words, numbers and '_'")
             return false
@@ -54,7 +55,7 @@ class RegisterInteractor : RegisterInteractorProtocol {
         }
         catch _ {
             return false
-        }
+            }
     }
     
     func saveUserInfo(_ user: Firebase.User, withUsername username: String) {
