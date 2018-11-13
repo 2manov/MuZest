@@ -18,6 +18,12 @@
 		7193911C2177EB390089FBF6 /* MuZestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193911B2177EB390089FBF6 /* MuZestTests.swift */; };
 		719391272177EB390089FBF6 /* MuZestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391262177EB390089FBF6 /* MuZestUITests.swift */; };
 		A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E1E2821898FF1003DB027 /* NetworkReachability.swift */; };
+		A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE663F219AD7E100E926A6 /* AuthView.swift */; };
+		A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6641219AD83300E926A6 /* AuthProtocols.swift */; };
+		A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */; };
+		A4BE6646219AD8E700E926A6 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6645219AD8E700E926A6 /* AuthPresenter.swift */; };
+		A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */; };
+		A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6649219AD90500E926A6 /* AuthRouter.swift */; };
 		A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */; };
 		A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */; };
 		A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85942185D816003F7DB1 /* RegisterConfigurator.swift */; };
@@ -65,6 +71,12 @@
 		832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF643D472AF31ADF33C5DD /* Pods-MuZestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.release.xcconfig"; sourceTree = "<group>"; };
 		A41E1E2821898FF1003DB027 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		A4BE663F219AD7E100E926A6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		A4BE6641219AD83300E926A6 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
+		A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
+		A4BE6645219AD8E700E926A6 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		A4BE6649219AD90500E926A6 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		A4FC85942185D816003F7DB1 /* RegisterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterConfigurator.swift; sourceTree = "<group>"; };
@@ -185,9 +197,23 @@
 			path = NetworkReachability;
 			sourceTree = "<group>";
 		};
+		A4BE663E219AD77300E926A6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE663F219AD7E100E926A6 /* AuthView.swift */,
+				A4BE6641219AD83300E926A6 /* AuthProtocols.swift */,
+				A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */,
+				A4BE6645219AD8E700E926A6 /* AuthPresenter.swift */,
+				A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */,
+				A4BE6649219AD90500E926A6 /* AuthRouter.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		A4CAF1D12185D14A00FC2C63 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A4BE663E219AD77300E926A6 /* Auth */,
 				A41E1E2721898FD1003DB027 /* NetworkReachability */,
 				A4CAF1D22185D17E00FC2C63 /* Register */,
 			);
@@ -460,13 +486,19 @@
 			files = (
 				A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */,
 				A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */,
+				A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */,
+				A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */,
+				A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */,
 				A4FC859B2185D962003F7DB1 /* RegisterProtocols.swift in Sources */,
 				A4FC85992185D842003F7DB1 /* RegisterInteractor.swift in Sources */,
+				A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */,
 				719391092177EB390089FBF6 /* ViewController.swift in Sources */,
 				719391072177EB390089FBF6 /* AppDelegate.swift in Sources */,
 				A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */,
 				A4FC85972185D828003F7DB1 /* RegisterPresenter.swift in Sources */,
 				A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */,
+				A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */,
+				A4BE6646219AD8E700E926A6 /* AuthPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
