@@ -24,20 +24,18 @@ class AuthInteractor : AuthInteractorProtocol {
     
     func authAction(with authData: Dictionary<String, String>) {
         
-        if (authData["email"] == "") {
-            presenter.showAlertToView(with: "Email is empty!")
-            return
+        if let email = authData["email"], let pass = authData["password"] {
+            
+            Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+                if let error = error {
+                    self.presenter.showAlertToView(with: error.localizedDescription)
+                    return
+                } else {
+                    self.presenter.authSuccess()
+                }
+            }
+        } else {
+            presenter.showAlertToView(with: "email/password can't be empty")
         }
-        
-        if (authData["password"] == "") {
-            presenter.showAlertToView(with: "Password is empty!")
-            return
-        }
-
-        
-        
-        
     }
-
-
 }

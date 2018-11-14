@@ -23,11 +23,10 @@ class AuthPresenter : AuthPresenterProtocol{
     
     
     func authButtonClicked() {
-//        let authData: [String: String] = ["email": view.email ?? "",
-//                                         "password": view.password ?? ""]
-//
-//        interactor.authAction(with: authData)
-        self.authSuccess()
+        let authData: [String: String] = ["email": view.email!,
+                                         "password": view.password!]
+
+        interactor.authAction(with: authData)
     }
 
     func regButtonClicked() {

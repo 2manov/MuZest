@@ -39,6 +39,11 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         presenter.regButtonClicked()
     }
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        presenter.backButtonClicked()
+    }
+    
+    
     func showAlert(with error: String) {
         let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
