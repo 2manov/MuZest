@@ -24,6 +24,9 @@
 		A4BE6646219AD8E700E926A6 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6645219AD8E700E926A6 /* AuthPresenter.swift */; };
 		A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */; };
 		A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6649219AD90500E926A6 /* AuthRouter.swift */; };
+		A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */; };
+		A4C63B86219DCE8300D4C354 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B85219DCE8300D4C354 /* Feed.storyboard */; };
+		A4C63B88219DCEAE00D4C354 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B87219DCEAE00D4C354 /* Profile.storyboard */; };
 		A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */; };
 		A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */; };
 		A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85942185D816003F7DB1 /* RegisterConfigurator.swift */; };
@@ -77,6 +80,9 @@
 		A4BE6645219AD8E700E926A6 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		A4BE6649219AD90500E926A6 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreatingPost.storyboard; sourceTree = "<group>"; };
+		A4C63B85219DCE8300D4C354 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		A4C63B87219DCEAE00D4C354 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		A4FC85942185D816003F7DB1 /* RegisterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterConfigurator.swift; sourceTree = "<group>"; };
@@ -210,9 +216,36 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		A4C63B7E219DCD7A00D4C354 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				A4C63B85219DCE8300D4C354 /* Feed.storyboard */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		A4C63B7F219DCD8400D4C354 /* CreatingPost */ = {
+			isa = PBXGroup;
+			children = (
+				A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */,
+			);
+			path = CreatingPost;
+			sourceTree = "<group>";
+		};
+		A4C63B80219DCD9E00D4C354 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A4C63B87219DCEAE00D4C354 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		A4CAF1D12185D14A00FC2C63 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A4C63B80219DCD9E00D4C354 /* Profile */,
+				A4C63B7F219DCD8400D4C354 /* CreatingPost */,
+				A4C63B7E219DCD7A00D4C354 /* Feed */,
 				A4BE663E219AD77300E926A6 /* Auth */,
 				A41E1E2721898FD1003DB027 /* NetworkReachability */,
 				A4CAF1D22185D17E00FC2C63 /* Register */,
@@ -359,8 +392,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C12D8729217BB39900E678D5 /* Podfile in Resources */,
+				A4C63B86219DCE8300D4C354 /* Feed.storyboard in Resources */,
+				A4C63B88219DCEAE00D4C354 /* Profile.storyboard in Resources */,
 				719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */,
 				C12D8725217BB35800E678D5 /* GoogleService-Info.plist in Resources */,
+				A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */,
 				7193910E2177EB390089FBF6 /* Assets.xcassets in Resources */,
 				7193910C2177EB390089FBF6 /* Main.storyboard in Resources */,
 			);
