@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PME-L5-NEi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8I6-7m-8dC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="i7q-Uk-dTv">
             <objects>
-                <viewController id="PME-L5-NEi" sceneMemberID="viewController">
+                <viewController id="PME-L5-NEi" customClass="ProfileViewController" customModule="MuZest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="89a-xr-bbs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PkQ-zg-Ljh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pW6-ez-5QX"/>
+                    <navigationItem key="navigationItem" title="Profile" id="MHQ-pv-Ynr">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="OpO-5j-wbL">
+                            <connections>
+                                <action selector="logout:" destination="PME-L5-NEi" id="h6F-ri-l3M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbu-S6-hvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402" y="454"/>
+            <point key="canvasLocation" x="3340" y="453.82308845577217"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gcf-VT-AfI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8I6-7m-8dC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="user_male" id="pW6-ez-5QX">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IR0-eV-nm8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PME-L5-NEi" kind="relationship" relationship="rootViewController" id="Gdz-t4-ha9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyf-LB-P6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2400.8000000000002" y="453.82308845577217"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user_male" width="30" height="30"/>
+    </resources>
 </document>

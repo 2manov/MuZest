@@ -9,6 +9,7 @@ target 'MuZest' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
   target 'MuZestTests' do
     inherit! :search_paths

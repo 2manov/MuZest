@@ -18,6 +18,8 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
+        self.emailLabel.delegate = self
+        self.passwordLabel.delegate = self
     }
     
     var email: String?
@@ -36,7 +38,6 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
         self.showAlert(with: "To be continued...")
     }
     
-    
     @IBAction func authButtonClicked(_ sender: Any) {
         self.email = emailLabel?.text ?? ""
         self.password = passwordLabel?.text ?? ""
@@ -45,6 +46,21 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
 
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == emailLabel) {
+            emailLabel.resignFirstResponder()
+            passwordLabel.becomeFirstResponder()
+        }
+        else if (textField == passwordLabel) {
+            passwordLabel.resignFirstResponder()
+        }
+        
+        return(true)
+    }
     
     func showAlert(with error: String) {
         let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
@@ -54,7 +70,4 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
         self.present(alertController, animated: true, completion: nil)
     }
     
-
-    
-
 }

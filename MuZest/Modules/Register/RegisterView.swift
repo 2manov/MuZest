@@ -28,6 +28,10 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
+        self.usernameTextField?.delegate = self
+        self.passwordTextField?.delegate = self
+        self.passwordConfirmTextField?.delegate = self
+        self.emailTextField?.delegate = self
     }
     
     @IBAction func regButtonClicked(_ sender: UIButton) {
@@ -52,7 +56,31 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func textFieldDidBeginEditing(emailTextField: UITextField) {
-        ScrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == usernameTextField) {
+            usernameTextField?.resignFirstResponder()
+            passwordTextField?.becomeFirstResponder()
+        }
+        else if (textField == passwordTextField) {
+            passwordTextField?.resignFirstResponder()
+            passwordConfirmTextField?.becomeFirstResponder()
+        }
+        else if (textField == passwordConfirmTextField) {
+            passwordConfirmTextField?.resignFirstResponder()
+            emailTextField?.becomeFirstResponder()
+        }
+        else if (textField == emailTextField) {
+            emailTextField?.resignFirstResponder()
+        }
+        
+        return(true)
+    }
+
 }
+
+
+

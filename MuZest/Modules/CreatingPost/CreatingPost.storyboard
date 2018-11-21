@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xK7-XS-6Ag">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xTU-QS-6gI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Create-->
         <scene sceneID="KYV-ZT-xUT">
             <objects>
                 <viewController id="xK7-XS-6Ag" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8n-Kk-0Bf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="t7h-iz-VhW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="fZA-ta-f2A"/>
+                    <navigationItem key="navigationItem" title="Create" id="PEl-WD-FMy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJA-8q-g24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2451" y="-206"/>
+            <point key="canvasLocation" x="3508" y="-80.50974512743629"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SKb-xx-zDU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xTU-QS-6gI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="musical_notes" id="fZA-ta-f2A">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Iw-d6-I5n">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xK7-XS-6Ag" kind="relationship" relationship="rootViewController" id="bnE-nA-eUW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03A-Nz-rp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568.8000000000002" y="-80.50974512743629"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="musical_notes" width="30" height="30"/>
+    </resources>
 </document>
