@@ -10,8 +10,8 @@
 		5067138F96BD1D4E0DBE5A24 /* Pods_MuZestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */; };
 		5BE5010121CAA7061A5A2299 /* Pods_MuZestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC159680DF126814644D620D /* Pods_MuZestTests.framework */; };
 		611D3E8CBDF6B4BB554DACA6 /* Pods_MuZest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */; };
+		7123DC2221A5C4920018B6DC /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7123DC2121A5C4920018B6DC /* FeedTableViewController.swift */; };
 		715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */; };
-		715F2EE021A57F02001BD5BE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDF21A57F02001BD5BE /* FeedViewController.swift */; };
 		715F2EE221A587CD001BD5BE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EE121A587CD001BD5BE /* Post.swift */; };
 		719391072177EB390089FBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391062177EB390089FBF6 /* AppDelegate.swift */; };
 		719391092177EB390089FBF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391082177EB390089FBF6 /* ViewController.swift */; };
@@ -64,8 +64,8 @@
 		19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E43145D8BFFC767D000807F /* Pods-MuZestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD017414691393993F3FF6A /* Pods-MuZestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestUITests/Pods-MuZestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7123DC2121A5C4920018B6DC /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		715F2EDF21A57F02001BD5BE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		715F2EE121A587CD001BD5BE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		719391032177EB390089FBF6 /* MuZest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuZest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719391062177EB390089FBF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -232,9 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				A4C63B85219DCE8300D4C354 /* Feed.storyboard */,
+				7123DC2121A5C4920018B6DC /* FeedTableViewController.swift */,
 				71A5F48121A5985900BEC6C5 /* PostHeaderTableViewCell.swift */,
 				71A5F48321A5987400BEC6C5 /* PostTableViewCell.swift */,
-				715F2EDF21A57F02001BD5BE /* FeedViewController.swift */,
 				71A5F48521A59B0B00BEC6C5 /* User.swift */,
 				715F2EE121A587CD001BD5BE /* Post.swift */,
 			);
@@ -548,8 +548,8 @@
 				71A5F48421A5987400BEC6C5 /* PostTableViewCell.swift in Sources */,
 				71A5F48221A5985900BEC6C5 /* PostHeaderTableViewCell.swift in Sources */,
 				A4FC85992185D842003F7DB1 /* RegisterInteractor.swift in Sources */,
+				7123DC2221A5C4920018B6DC /* FeedTableViewController.swift in Sources */,
 				A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */,
-				715F2EE021A57F02001BD5BE /* FeedViewController.swift in Sources */,
 				719391092177EB390089FBF6 /* ViewController.swift in Sources */,
 				719391072177EB390089FBF6 /* AppDelegate.swift in Sources */,
 				A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */,
