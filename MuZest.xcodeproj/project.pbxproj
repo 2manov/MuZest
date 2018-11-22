@@ -10,18 +10,19 @@
 		5067138F96BD1D4E0DBE5A24 /* Pods_MuZestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */; };
 		5BE5010121CAA7061A5A2299 /* Pods_MuZestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC159680DF126814644D620D /* Pods_MuZestTests.framework */; };
 		611D3E8CBDF6B4BB554DACA6 /* Pods_MuZest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */; };
-		7123DC2221A5C4920018B6DC /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7123DC2121A5C4920018B6DC /* FeedTableViewController.swift */; };
 		715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */; };
-		715F2EE221A587CD001BD5BE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EE121A587CD001BD5BE /* Post.swift */; };
+		7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2D921A6425C009D457B /* FeedTableViewController.swift */; };
+		7185A2DC21A64485009D457B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2DB21A64485009D457B /* PostCell.swift */; };
 		719391072177EB390089FBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391062177EB390089FBF6 /* AppDelegate.swift */; };
 		7193910C2177EB390089FBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7193910A2177EB390089FBF6 /* Main.storyboard */; };
 		7193910E2177EB390089FBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7193910D2177EB390089FBF6 /* Assets.xcassets */; };
 		719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7193910F2177EB390089FBF6 /* LaunchScreen.storyboard */; };
 		7193911C2177EB390089FBF6 /* MuZestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193911B2177EB390089FBF6 /* MuZestTests.swift */; };
 		719391272177EB390089FBF6 /* MuZestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391262177EB390089FBF6 /* MuZestUITests.swift */; };
-		71A5F48221A5985900BEC6C5 /* PostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5F48121A5985900BEC6C5 /* PostHeaderTableViewCell.swift */; };
-		71A5F48421A5987400BEC6C5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5F48321A5987400BEC6C5 /* PostTableViewCell.swift */; };
-		71A5F48621A59B0B00BEC6C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5F48521A59B0B00BEC6C5 /* User.swift */; };
+		71CF77AE21A63B3F0054CBAC /* MuZest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71CF77AD21A63B3F0054CBAC /* MuZest.storyboard */; };
+		71CF77B221A63BFA0054CBAC /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF77B121A63BFA0054CBAC /* PostHeaderCell.swift */; };
+		71CF77B621A63CFA0054CBAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF77B521A63CFA0054CBAC /* User.swift */; };
+		71CF77B821A63D120054CBAC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF77B721A63D120054CBAC /* Post.swift */; };
 		A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E1E2821898FF1003DB027 /* NetworkReachability.swift */; };
 		A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE663F219AD7E100E926A6 /* AuthView.swift */; };
 		A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6641219AD83300E926A6 /* AuthProtocols.swift */; };
@@ -30,7 +31,6 @@
 		A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */; };
 		A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6649219AD90500E926A6 /* AuthRouter.swift */; };
 		A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */; };
-		A4C63B86219DCE8300D4C354 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B85219DCE8300D4C354 /* Feed.storyboard */; };
 		A4C63B88219DCEAE00D4C354 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B87219DCEAE00D4C354 /* Profile.storyboard */; };
 		A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */; };
 		A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */; };
@@ -63,9 +63,9 @@
 		19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E43145D8BFFC767D000807F /* Pods-MuZestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD017414691393993F3FF6A /* Pods-MuZestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestUITests/Pods-MuZestUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7123DC2121A5C4920018B6DC /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		715F2EE121A587CD001BD5BE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		7185A2D921A6425C009D457B /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		7185A2DB21A64485009D457B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		719391032177EB390089FBF6 /* MuZest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuZest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719391062177EB390089FBF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7193910B2177EB390089FBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,9 +78,10 @@
 		719391222177EB390089FBF6 /* MuZestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuZestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		719391262177EB390089FBF6 /* MuZestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuZestUITests.swift; sourceTree = "<group>"; };
 		719391282177EB390089FBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71A5F48121A5985900BEC6C5 /* PostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		71A5F48321A5987400BEC6C5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		71A5F48521A59B0B00BEC6C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		71CF77AD21A63B3F0054CBAC /* MuZest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MuZest.storyboard; sourceTree = "<group>"; };
+		71CF77B121A63BFA0054CBAC /* PostHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
+		71CF77B521A63CFA0054CBAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		71CF77B721A63D120054CBAC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF643D472AF31ADF33C5DD /* Pods-MuZestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.release.xcconfig"; sourceTree = "<group>"; };
 		A41E1E2821898FF1003DB027 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		A4BE6647219AD8F400E926A6 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		A4BE6649219AD90500E926A6 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreatingPost.storyboard; sourceTree = "<group>"; };
-		A4C63B85219DCE8300D4C354 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		A4C63B87219DCEAE00D4C354 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
@@ -204,6 +204,19 @@
 			path = MuZestUITests;
 			sourceTree = "<group>";
 		};
+		71CF77AB21A63AC10054CBAC /* MuZest */ = {
+			isa = PBXGroup;
+			children = (
+				71CF77AD21A63B3F0054CBAC /* MuZest.storyboard */,
+				71CF77B121A63BFA0054CBAC /* PostHeaderCell.swift */,
+				7185A2DB21A64485009D457B /* PostCell.swift */,
+				71CF77B721A63D120054CBAC /* Post.swift */,
+				71CF77B521A63CFA0054CBAC /* User.swift */,
+				7185A2D921A6425C009D457B /* FeedTableViewController.swift */,
+			);
+			path = MuZest;
+			sourceTree = "<group>";
+		};
 		A41E1E2721898FD1003DB027 /* NetworkReachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,19 +236,6 @@
 				A4BE6649219AD90500E926A6 /* AuthRouter.swift */,
 			);
 			path = Auth;
-			sourceTree = "<group>";
-		};
-		A4C63B7E219DCD7A00D4C354 /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				A4C63B85219DCE8300D4C354 /* Feed.storyboard */,
-				7123DC2121A5C4920018B6DC /* FeedTableViewController.swift */,
-				71A5F48121A5985900BEC6C5 /* PostHeaderTableViewCell.swift */,
-				71A5F48321A5987400BEC6C5 /* PostTableViewCell.swift */,
-				71A5F48521A59B0B00BEC6C5 /* User.swift */,
-				715F2EE121A587CD001BD5BE /* Post.swift */,
-			);
-			path = Feed;
 			sourceTree = "<group>";
 		};
 		A4C63B7F219DCD8400D4C354 /* CreatingPost */ = {
@@ -258,9 +258,9 @@
 		A4CAF1D12185D14A00FC2C63 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				71CF77AB21A63AC10054CBAC /* MuZest */,
 				A4C63B80219DCD9E00D4C354 /* Profile */,
 				A4C63B7F219DCD8400D4C354 /* CreatingPost */,
-				A4C63B7E219DCD7A00D4C354 /* Feed */,
 				A4BE663E219AD77300E926A6 /* Auth */,
 				A41E1E2721898FD1003DB027 /* NetworkReachability */,
 				A4CAF1D22185D17E00FC2C63 /* Register */,
@@ -406,8 +406,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CF77AE21A63B3F0054CBAC /* MuZest.storyboard in Resources */,
 				C12D8729217BB39900E678D5 /* Podfile in Resources */,
-				A4C63B86219DCE8300D4C354 /* Feed.storyboard in Resources */,
 				A4C63B88219DCEAE00D4C354 /* Profile.storyboard in Resources */,
 				719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */,
 				C12D8725217BB35800E678D5 /* GoogleService-Info.plist in Resources */,
@@ -542,19 +542,19 @@
 				A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */,
 				A4FC859B2185D962003F7DB1 /* RegisterProtocols.swift in Sources */,
 				715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */,
-				71A5F48421A5987400BEC6C5 /* PostTableViewCell.swift in Sources */,
-				71A5F48221A5985900BEC6C5 /* PostHeaderTableViewCell.swift in Sources */,
+				7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */,
+				71CF77B821A63D120054CBAC /* Post.swift in Sources */,
 				A4FC85992185D842003F7DB1 /* RegisterInteractor.swift in Sources */,
-				7123DC2221A5C4920018B6DC /* FeedTableViewController.swift in Sources */,
 				A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */,
 				719391072177EB390089FBF6 /* AppDelegate.swift in Sources */,
 				A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */,
+				71CF77B221A63BFA0054CBAC /* PostHeaderCell.swift in Sources */,
 				A4FC85972185D828003F7DB1 /* RegisterPresenter.swift in Sources */,
 				A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */,
-				715F2EE221A587CD001BD5BE /* Post.swift in Sources */,
 				A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */,
+				71CF77B621A63CFA0054CBAC /* User.swift in Sources */,
 				A4BE6646219AD8E700E926A6 /* AuthPresenter.swift in Sources */,
-				71A5F48621A59B0B00BEC6C5 /* User.swift in Sources */,
+				7185A2DC21A64485009D457B /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

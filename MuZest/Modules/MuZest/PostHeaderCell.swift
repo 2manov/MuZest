@@ -1,14 +1,15 @@
 //
-//  PostHeaderTableViewCell.swift
+//  PostHeaderCell.swift
 //  MuZest
 //
-//  Created by Никита Туманов on 21/11/2018.
+//  Created by Никита Туманов on 22/11/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
 
 import UIKit
 
-class PostHeaderTableViewCell: UITableViewCell {
+class PostHeaderCell: UITableViewCell
+{
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -33,4 +34,5 @@ class PostHeaderTableViewCell: UITableViewCell {
         followButton.layer.borderColor = followButton.tintColor.cgColor
         followButton.layer.masksToBounds = true
     }
+    
 }

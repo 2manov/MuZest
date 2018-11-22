@@ -2,7 +2,7 @@
 //  FeedTableViewController.swift
 //  MuZest
 //
-//  Created by Никита Туманов on 21/11/2018.
+//  Created by Никита Туманов on 22/11/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
 
@@ -24,10 +24,10 @@ class FeedTableViewController: UITableViewController
         
         self.fetchPosts()
         
-        tableView.dataSource = self
         tableView.estimatedRowHeight = Storyboard.postCellDefaultHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
+        self.tableView.rowHeight = 578
     }
     
     func fetchPosts()
@@ -57,7 +57,7 @@ extension FeedTableViewController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postCell, for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postCell, for: indexPath) as! PostCell
         
         cell.post = self.posts?[indexPath.section]
         cell.selectionStyle = .none
@@ -67,7 +67,7 @@ extension FeedTableViewController
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postHeaderCell) as! PostHeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postHeaderCell) as! PostHeaderCell
         
         cell.post = self.posts?[section]
         cell.backgroundColor = UIColor.white
