@@ -25,7 +25,6 @@ class PostCell: UITableViewCell {
     {
         self.postImageView.image = post.image
         postCaptionLabel.text = post.caption
-        numberOfLikeButtons.setTitle("Be the first one to share a comment", for: [])
         timeAgoLabel.text = post.timeAgo
     }
 
