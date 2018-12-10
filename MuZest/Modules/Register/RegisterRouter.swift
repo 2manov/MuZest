@@ -20,8 +20,6 @@ class RegisterRouter : RegisterRouterProtocol {
     }
     
     func performForSegue(with nameSegue: String) {
-        
         view.performSegue(withIdentifier: nameSegue, sender : nil)
-        
     }
 }

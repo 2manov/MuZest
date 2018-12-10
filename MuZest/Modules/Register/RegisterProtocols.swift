@@ -18,6 +18,7 @@ protocol RegisterViewProtocol: class {
     
     func showAlert(with error: String)
     func performSegue(withIdentifier: String, sender : Any?)
+    func goBackToAuth ()
 }
 
 protocol RegisterConfiguratorProtocol: class {
@@ -43,7 +44,6 @@ protocol RegisterPresenterProtocol: class {
     var router: RegisterRouterProtocol! { set get }
     
     func configureView()
-    func backButtonClicked()
     func regButtonClicked()
     func regSuccess()
     func showAlertToView(with error: String)

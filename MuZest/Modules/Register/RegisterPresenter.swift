@@ -8,6 +8,8 @@
 import Foundation
 
 class RegisterPresenter : RegisterPresenterProtocol{
+
+    
     
     weak var view: RegisterViewProtocol!
     var interactor: RegisterInteractorProtocol!
@@ -33,10 +35,7 @@ class RegisterPresenter : RegisterPresenterProtocol{
     }
     
     func regSuccess(){
-        router.performForSegue(with : "toAuth")
+        view.goBackToAuth()
     }
-    
-    func backButtonClicked() {
-        router.performForSegue(with : "toAuth")
-    }
+
 }

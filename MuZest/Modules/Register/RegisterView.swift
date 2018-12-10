@@ -43,10 +43,18 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         presenter.regButtonClicked()
     }
     
+
+    
     @IBAction func backButtonClicked(_ sender: Any) {
-        presenter.backButtonClicked()
+        
+        self.goBackToAuth()
+        
     }
     
+    func goBackToAuth (){
+        
+        navigationController?.popViewController(animated: true)
+    }
     
     func showAlert(with error: String) {
         let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
@@ -78,6 +86,19 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         }
         
         return(true)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
 }
