@@ -11,30 +11,22 @@ import Firebase
 
 class ProfileViewController: UIViewController {
 
+//    let databaseRefer = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    
     }
     @IBAction func logout(_ sender: Any) {
-        print(Auth.auth().currentUser as Any)
-        do {
-            try Auth.auth().signOut()
-        } catch let logoutError {
-            print(logoutError)
+        
+        if Auth.auth().currentUser != nil{
+            try! Auth.auth().signOut()
+            
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AuthController") as UIViewController
+            self.present(viewController, animated: true, completion: nil)
+
+            
+            }
         }
-        print(Auth.auth().currentUser as Any)
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
