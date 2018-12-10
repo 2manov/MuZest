@@ -28,10 +28,6 @@ class AuthPresenter : AuthPresenterProtocol{
 
         interactor.authAction(with: authData)
     }
-
-    func regButtonClicked() {
-        router.performForSegue(with : "toRegister")
-    }
     
     func authSuccess() {
         router.performForSegue(with : "toFeed")
