@@ -32,6 +32,8 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         self.passwordTextField?.delegate = self
         self.passwordConfirmTextField?.delegate = self
         self.emailTextField?.delegate = self
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @IBAction func regButtonClicked(_ sender: UIButton) {
@@ -88,6 +90,41 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         return(true)
     }
     
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0 {
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//    }
+//
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//        if self.view.frame.origin.y != 0 {
+//            self.view.frame.origin.y = 0
+//        }
+//    }
+//
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField == passwordConfirmTextField || textField == emailTextField) {
+        animateViewMoving(up: true, moveValue: 100)
+        }
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField == passwordConfirmTextField || textField == emailTextField) {
+        animateViewMoving(up: false, moveValue: 100)
+        }
+    }
+    
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
