@@ -44,7 +44,6 @@ protocol AuthPresenterProtocol: class {
     func configureView()
     
     func authButtonClicked()
-    func regButtonClicked()
     func authSuccess()
     
     func showAlertToView(with error: String)

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
 
-import UIKit
+
 
 class AuthPresenter : AuthPresenterProtocol{
    
@@ -27,10 +27,6 @@ class AuthPresenter : AuthPresenterProtocol{
                                          "password": view.password!]
 
         interactor.authAction(with: authData)
-    }
-
-    func regButtonClicked() {
-        router.performForSegue(with : "toRegister")
     }
     
     func authSuccess() {

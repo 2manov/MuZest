@@ -18,6 +18,8 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
+        self.emailLabel.delegate = self
+        self.passwordLabel.delegate = self
     }
     
     var email: String?
@@ -28,14 +30,15 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
     
 
     @IBAction func regButtonClicked(_ sender: Any) {
-        presenter.regButtonClicked()
-        
+        guard let myVC = storyboard?.instantiateViewController(withIdentifier: "RegisterView") else {
+            return
+        }
+        navigationController?.pushViewController(myVC, animated: true)
     }
    
     @IBAction func forgotPasswordButtonClicked(_ sender: Any) {
         self.showAlert(with: "To be continued...")
     }
-    
     
     @IBAction func authButtonClicked(_ sender: Any) {
         self.email = emailLabel?.text ?? ""
@@ -45,6 +48,21 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
 
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == emailLabel) {
+            emailLabel.resignFirstResponder()
+            passwordLabel.becomeFirstResponder()
+        }
+        else if (textField == passwordLabel) {
+            passwordLabel.resignFirstResponder()
+        }
+        
+        return(true)
+    }
     
     func showAlert(with error: String) {
         let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
@@ -53,8 +71,17 @@ class AuthView: UIViewController, UITextFieldDelegate, AuthViewProtocol {
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
     }
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
     
-
 }
