@@ -31,6 +31,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         return aboutLabel.frame.height
     }
     
+    
 
     
     override func viewDidLoad() {
