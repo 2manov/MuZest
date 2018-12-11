@@ -10,7 +10,7 @@
 		5067138F96BD1D4E0DBE5A24 /* Pods_MuZestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */; };
 		5BE5010121CAA7061A5A2299 /* Pods_MuZestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC159680DF126814644D620D /* Pods_MuZestTests.framework */; };
 		611D3E8CBDF6B4BB554DACA6 /* Pods_MuZest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */; };
-		715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */; };
+		715F2EDE21A57B45001BD5BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDD21A57B45001BD5BE /* ProfileView.swift */; };
 		7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2D921A6425C009D457B /* FeedTableViewController.swift */; };
 		7185A2DC21A64485009D457B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2DB21A64485009D457B /* PostCell.swift */; };
 		719391072177EB390089FBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391062177EB390089FBF6 /* AppDelegate.swift */; };
@@ -24,6 +24,11 @@
 		71CF77B621A63CFA0054CBAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF77B521A63CFA0054CBAC /* User.swift */; };
 		71CF77B821A63D120054CBAC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CF77B721A63D120054CBAC /* Post.swift */; };
 		A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E1E2821898FF1003DB027 /* NetworkReachability.swift */; };
+		A425975A21BF165A00DD2132 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975921BF165A00DD2132 /* ProfileProtocols.swift */; };
+		A425975C21BF166C00DD2132 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975B21BF166C00DD2132 /* ProfilePresenter.swift */; };
+		A425975E21BF168700DD2132 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975D21BF168700DD2132 /* ProfileConfigurator.swift */; };
+		A425976021BF169B00DD2132 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975F21BF169B00DD2132 /* ProfileRouter.swift */; };
+		A425976221BF16B800DD2132 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425976121BF16B800DD2132 /* ProfileInteractor.swift */; };
 		A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE663F219AD7E100E926A6 /* AuthView.swift */; };
 		A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6641219AD83300E926A6 /* AuthProtocols.swift */; };
 		A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */; };
@@ -63,7 +68,7 @@
 		19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E43145D8BFFC767D000807F /* Pods-MuZestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD017414691393993F3FF6A /* Pods-MuZestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestUITests/Pods-MuZestUITests.release.xcconfig"; sourceTree = "<group>"; };
-		715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		715F2EDD21A57B45001BD5BE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		7185A2D921A6425C009D457B /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		7185A2DB21A64485009D457B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		719391032177EB390089FBF6 /* MuZest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuZest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +90,11 @@
 		832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF643D472AF31ADF33C5DD /* Pods-MuZestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.release.xcconfig"; sourceTree = "<group>"; };
 		A41E1E2821898FF1003DB027 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		A425975921BF165A00DD2132 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		A425975B21BF166C00DD2132 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		A425975D21BF168700DD2132 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
+		A425975F21BF169B00DD2132 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		A425976121BF16B800DD2132 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		A4BE663F219AD7E100E926A6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A4BE6641219AD83300E926A6 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -249,8 +259,13 @@
 		A4C63B80219DCD9E00D4C354 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */,
+				715F2EDD21A57B45001BD5BE /* ProfileView.swift */,
+				A425975921BF165A00DD2132 /* ProfileProtocols.swift */,
+				A425975B21BF166C00DD2132 /* ProfilePresenter.swift */,
 				A4C63B87219DCEAE00D4C354 /* Profile.storyboard */,
+				A425975D21BF168700DD2132 /* ProfileConfigurator.swift */,
+				A425975F21BF169B00DD2132 /* ProfileRouter.swift */,
+				A425976121BF16B800DD2132 /* ProfileInteractor.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -535,24 +550,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A425976021BF169B00DD2132 /* ProfileRouter.swift in Sources */,
+				A425975C21BF166C00DD2132 /* ProfilePresenter.swift in Sources */,
 				A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */,
 				A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */,
 				A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */,
 				A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */,
 				A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */,
 				A4FC859B2185D962003F7DB1 /* RegisterProtocols.swift in Sources */,
-				715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */,
+				715F2EDE21A57B45001BD5BE /* ProfileView.swift in Sources */,
+				A425975E21BF168700DD2132 /* ProfileConfigurator.swift in Sources */,
 				7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */,
 				71CF77B821A63D120054CBAC /* Post.swift in Sources */,
 				A4FC85992185D842003F7DB1 /* RegisterInteractor.swift in Sources */,
 				A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */,
 				719391072177EB390089FBF6 /* AppDelegate.swift in Sources */,
 				A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */,
+				A425975A21BF165A00DD2132 /* ProfileProtocols.swift in Sources */,
 				71CF77B221A63BFA0054CBAC /* PostHeaderCell.swift in Sources */,
 				A4FC85972185D828003F7DB1 /* RegisterPresenter.swift in Sources */,
 				A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */,
 				A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */,
 				71CF77B621A63CFA0054CBAC /* User.swift in Sources */,
+				A425976221BF16B800DD2132 /* ProfileInteractor.swift in Sources */,
 				A4BE6646219AD8E700E926A6 /* AuthPresenter.swift in Sources */,
 				7185A2DC21A64485009D457B /* PostCell.swift in Sources */,
 			);

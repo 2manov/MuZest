@@ -68,7 +68,12 @@ class RegisterInteractor : RegisterInteractorProtocol {
                 self.presenter.showAlertToView(with: error.localizedDescription)
                 return
             }
-            self.databaseRefer.child("users").child(username).setValue(["user_id": user.uid])
+            self.databaseRefer.child("users").child(username).setValue(["user_id": user.uid,
+                                                                        "email": user.email,
+                                                                        "first_name": "",
+                                                                        "last_name": "",
+                                                                        "profile_photo_url":"",
+                                                                        "about":""])
         }
     }
     
