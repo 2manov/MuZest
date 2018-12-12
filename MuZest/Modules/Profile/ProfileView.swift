@@ -71,6 +71,8 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         profileImage.layer.borderWidth = 1.5
         
         realNameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+        
+        
     }
     
     override func viewDidLoad() {
@@ -86,6 +88,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         super.viewDidAppear(animated)
         presenter.configureView()
         
+       
     }
 
     
