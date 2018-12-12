@@ -30,22 +30,35 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     
     @IBAction func settingsButtonClicked(_ sender: Any) {
-        
-        guard let myVC = storyboard?.instantiateViewController(withIdentifier: "SettingsView") else {
-            return
-        }
-        navigationController?.pushViewController(myVC, animated: true)
-        
+        performSegue(withIdentifier: "toSettings", sender: Any.self)
     }
     
-    func heightForTextView(text:String, font:String = "Helvetica") -> CGFloat{
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
+        if segue.identifier == "toSettings" {
+            let destinationVC = segue.destination as! SettingsView // Не лучше ли протокол?
+            destinationVC.realName = realNameLabel.text ?? ""
+            destinationVC.about = aboutLabel.text ?? ""
+            }
+    }
+    
+    func setDataToPhoto(with data: Data){
+        profileImage.image = UIImage(data: data)
+    }
+    
+    
+    func heightForTextView(text:String){
         aboutLabel.numberOfLines = 0
         aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        aboutLabel.font = UIFont(name: font, size: 14.0)
+        aboutLabel.font = UIFont(name: "Helvetica", size: 16.0)
         aboutLabel.text = text
         
         aboutLabel.sizeToFit()
-        return aboutLabel.frame.height
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let heightConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: realScrollView.frame.size.height + aboutLabel.frame.size.height - 50)
+        
+        view.addConstraints([heightConstraint])
     }
     
     func didVisaulSettings() {
@@ -63,17 +76,6 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         presenter.configureView()
         didVisaulSettings()
         
-        
-        let s = "This is just a load of text"
-        
-        let height_of_text = heightForTextView(text:s)
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let heightConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: realScrollView.frame.size.height + height_of_text - 50)
-        
-        view.addConstraints([heightConstraint])
-        
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -84,7 +86,6 @@ class ProfileView: UIViewController, ProfileViewProtocol {
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AuthController") as UIViewController
             self.present(viewController, animated: true, completion: nil)
 
-            
             }
         }
     
@@ -96,7 +97,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             loadingIndicator.hidesWhenStopped = true
             loadingIndicator.style = UIActivityIndicatorView.Style.gray
-            loadingIndicator.startAnimating();
+            loadingIndicator.startAnimating()
             
             alert.view.addSubview(loadingIndicator)
             present(alert, animated: true, completion: nil)

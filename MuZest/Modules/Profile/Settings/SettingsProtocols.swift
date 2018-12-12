@@ -17,7 +17,7 @@ protocol SettingsConfiguratorProtocol: class {
 
 protocol SettingsViewProtocol: class {
     
-    func fillDataUser(_ first_name: String, _ last_name: String, _ about: String)
+    func fillDataUser(_ real_name: String, _ about: String)
 }
 
 protocol SettingsRouterProtocol: class {
@@ -27,6 +27,8 @@ protocol SettingsRouterProtocol: class {
 
 protocol SettingsInteractorProtocol: class {
     func getUserData()
+    
+    func sendDataToDataBase(imageData: Data)
 }
 
 protocol SettingsPresenterProtocol: class {
@@ -34,6 +36,7 @@ protocol SettingsPresenterProtocol: class {
     var router: SettingsRouterProtocol! { set get }
     func configureView()
     func updateView(_ with: UserData)
+    func sendPhotoToDatabase(with imageData : Data)
     
 }
 

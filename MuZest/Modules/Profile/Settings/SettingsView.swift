@@ -8,9 +8,6 @@
 
 import Foundation
 import UIKit
-import FirebaseDatabase
-import FirebaseStorage
-import Firebase
 import MobileCoreServices
 
 class SettingsView: UIViewController, SettingsViewProtocol {
@@ -18,9 +15,12 @@ class SettingsView: UIViewController, SettingsViewProtocol {
     var imageProfile : UIImage!
     
     @IBOutlet weak var profileImageLabel: UIImageView!
-    @IBOutlet weak var firstNameTextLabel: UITextField!
-    @IBOutlet weak var lastNameTextLabel: UITextField!
+
+    @IBOutlet weak var realNameTextField: UITextField!
     @IBOutlet weak var aboutTextField: UITextView!
+    
+    var realName : String?
+    var about : String?
     
      var selectedImage: UIImage?
     
@@ -30,19 +30,21 @@ class SettingsView: UIViewController, SettingsViewProtocol {
     
     func didDisualSettings() {
         
-        profileImageLabel.layer.cornerRadius = profileImageLabel.frame.height / 2
+        profileImageLabel.layer.cornerRadius = profileImageLabel.frame.height / 2 //скругление
         profileImageLabel.layer.masksToBounds = true
         profileImageLabel.layer.borderColor = UIColor.lightGray.cgColor
-        profileImageLabel.layer.borderWidth = 1.5
+        profileImageLabel.layer.borderWidth = 1.5 //обводка
         
         aboutTextField.layer.borderColor = UIColor.lightGray.cgColor
         aboutTextField.layer.borderWidth = 1
+        
+        realNameTextField.text = realName
+        aboutTextField.text = about
     }
     
     
-    func fillDataUser(_ first_name: String, _ last_name: String, _ about: String){
-        self.firstNameTextLabel.text = first_name
-        self.lastNameTextLabel.text = last_name
+    func fillDataUser(_ real_name: String, _ about: String){
+        self.realNameTextField.text = real_name
         self.aboutTextField.text = about
     }
     
@@ -54,69 +56,39 @@ class SettingsView: UIViewController, SettingsViewProtocol {
         didDisualSettings()
         
         
+        
+        //Тап по фото
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
         profileImageLabel.addGestureRecognizer(tapGesture)
         profileImageLabel.isUserInteractionEnabled = true
     }
     
-    @objc func handleSelectPhoto(){
+    @objc func handleSelectPhoto(){ //Обработка тапа по фото
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
     }
 
-    @IBAction func doneButtonClicked(_ sender: Any) {
+    @IBAction func doneButtonClicked(_ sender: Any) { //Сохранение данных о прфоиле
         
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
-            let photoIdString = NSUUID().uuidString
-
-            let storageRef = Storage.storage().reference().child("user_data").child(photoIdString)
-            
-            storageRef.putData(imageData, metadata : nil) {
-                (metadata, error) in
-                
-                if (error != nil) {
-                    print (error as Any)
-                    return
-                }
-                
-                storageRef.downloadURL { (url, error) in
-                    guard url != nil else {
-                        return
-                    }
-                    self.sendDataToDatabase(photoUrl: (url?.absoluteString)!)
-                }
-            }
-        } else {
-            print("File cannot be empty")
+            presenter.sendPhotoToDatabase(with: imageData)
+        }
+        else {
+            showAlert(with: "File cannot be empty")
         }
     }
     
-    func sendDataToDatabase(photoUrl : String){
+    func showAlert(with error: String) {
+        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         
-        let ref = Database.database().reference()
-        ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
-            if snapshot.value != nil {
-                let postsReference = ref.child("users").child(snapshot.key)
-                let newPostId = postsReference.childByAutoId().key
-                postsReference.setValue(["profile_photo_url": photoUrl], withCompletionBlock: {
-                    (error, ref) in
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        return
-                    }
-                    print("Success")
-                })
-            }
-            else {
-                print ("user not found")
-            }
-        
-            }
-        )
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
     }
+    
 }
-
+// Открытие галереи
 extension SettingsView: UIImagePickerControllerDelegate,
 UINavigationControllerDelegate{
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){

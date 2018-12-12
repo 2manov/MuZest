@@ -5,6 +5,7 @@
 //  Created by Denis Borodaenko on 12/12/2018.
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
+import Foundation
 
 class SettingsPresenter:  SettingsPresenterProtocol {
     
@@ -21,7 +22,11 @@ class SettingsPresenter:  SettingsPresenterProtocol {
     }
     
     func updateView(_ userData: UserData) {
-        view.fillDataUser(userData.first_name ?? "", userData.last_name ?? "", userData.about ?? "")
+        view.fillDataUser(userData.real_name ?? "", userData.about ?? "")
+    }
+    
+    func sendPhotoToDatabase(with imageData : Data) {
+        interactor.sendDataToDataBase(imageData: imageData)
     }
     
     

@@ -8,9 +8,7 @@
 
 struct UserData {
     var username: String?
-    var first_name: String?
-    var last_name: String?
-    var email: String?
+    var real_name: String?
     var about: String?
     var follows: String?
     var profile_photo_url: String?

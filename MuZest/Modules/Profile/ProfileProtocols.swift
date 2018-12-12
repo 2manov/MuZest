@@ -26,6 +26,9 @@ protocol ProfileViewProtocol: class {
     
     func spinSpinner(isActive status: Bool)
     
+    func heightForTextView(text:String)
+    
+    func setDataToPhoto(with data: Data)
 }
 
 protocol ProfileRouterProtocol: class {
@@ -44,6 +47,7 @@ protocol ProfilePresenterProtocol: class {
     var router: ProfileRouterProtocol! { set get }
     func configureView()
     func updateView(_ with: UserData)
+    func updatePhoto(with photo: Data)
     
 }
 

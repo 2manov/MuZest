@@ -69,8 +69,7 @@ class RegisterInteractor : RegisterInteractorProtocol {
                 return
             }
             self.databaseRefer.child("users").child(username).setValue(["user_id": user.uid,
-                                                                        "first_name": "",
-                                                                        "last_name": "",
+                                                                        "real_name": "",
                                                                         "profile_photo_url":"",
                                                                         "about":"",
                                                                         "follows":""])
