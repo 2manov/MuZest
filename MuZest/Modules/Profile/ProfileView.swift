@@ -19,39 +19,78 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     @IBOutlet weak var scrollView: UIView!
     
-    @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
-    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
-        aboutLabel.numberOfLines = 0
-        aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        aboutLabel.font = font
-        aboutLabel.text = text
-        
-        aboutLabel.sizeToFit()
-        return aboutLabel.frame.height
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var realNameLabel: UILabel!
+    @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var postsLabel: UILabel!
+    
+    
+    @IBAction func settingsButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toSettings", sender: Any.self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
+        if segue.identifier == "toSettings" {
+            let destinationVC = segue.destination as! SettingsView // Не лучше ли протокол?
+            destinationVC.realName = realNameLabel.text ?? ""
+            destinationVC.about = aboutLabel.text ?? ""
+            destinationVC.photo = profileImage.image
+            }
+    }
+    
+    func setDataToPhoto(with data: Data){
+        profileImage.image = UIImage(data: data)
     }
     
     
-
+    func heightForTextView(text:String){
+        aboutLabel.numberOfLines = 0
+        aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        aboutLabel.font = UIFont(name: "Helvetica", size: 16.0)
+        aboutLabel.text = text
+        
+        aboutLabel.sizeToFit()
+        
+        DispatchQueue.main.async {
+            self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+            
+            let heightConstraint = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.realScrollView.frame.size.height + self.aboutLabel.frame.height - 50)
+            
+            self.view.addConstraints([heightConstraint])
+        }
+    }
+    
+    func didVisaulSettings() {
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.borderColor = UIColor.lightGray.cgColor
+        profileImage.layer.borderWidth = 1.5
+        
+        realNameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
-        let font = UIFont(name: "Helvetica", size: 20.0)
-        let s = "This is just a load of text"
-        let height_of_text = heightForView(text:s, font: font!, width: 100.0)
+        didVisaulSettings()
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.configureView()
         
-        let heightConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: realScrollView.frame.size.height + height_of_text - 50)
-        
-        view.addConstraints([heightConstraint])
+       
     }
-    
-    
-    
-    
+
     
     @IBAction func logout(_ sender: Any) {
         
@@ -61,7 +100,24 @@ class ProfileView: UIViewController, ProfileViewProtocol {
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AuthController") as UIViewController
             self.present(viewController, animated: true, completion: nil)
 
-            
             }
         }
+    
+    
+    func spinSpinner(isActive status: Bool = true){
+
+        if status{
+            let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.style = UIActivityIndicatorView.Style.gray
+            loadingIndicator.startAnimating()
+            
+            alert.view.addSubview(loadingIndicator)
+            present(alert, animated: true, completion: nil)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
 }

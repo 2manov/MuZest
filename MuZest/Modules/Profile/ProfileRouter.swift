@@ -6,7 +6,6 @@
 //  Copyright © 2018 Никита Туманов. All rights reserved.
 //
 
-import UIKit
 
 class ProfileRouter: ProfileRouterProtocol {
 
@@ -15,6 +14,6 @@ class ProfileRouter: ProfileRouterProtocol {
     required init(view: ProfileView) {
         self.view = view
     }
-
+    
 
 }

@@ -17,6 +17,18 @@ protocol ProfileConfiguratorProtocol: class {
 
 protocol ProfileViewProtocol: class {
     
+    var nameLabel: UILabel! {get set}
+    var realNameLabel: UILabel! {get set}
+    var aboutLabel: UILabel! {get set}
+    var followingLabel: UILabel! {get set}
+    var followersLabel: UILabel! {get set}
+    var postsLabel: UILabel! {get set}
+    
+    func spinSpinner(isActive status: Bool)
+    
+    func heightForTextView(text:String)
+    
+    func setDataToPhoto(with data: Data)
 }
 
 protocol ProfileRouterProtocol: class {
@@ -26,12 +38,16 @@ protocol ProfileRouterProtocol: class {
 
 protocol ProfileInteractorProtocol: class {
     
+    func getUserData()
+    
 }
 
 protocol ProfilePresenterProtocol: class {
     
     var router: ProfileRouterProtocol! { set get }
     func configureView()
+    func updateView(_ with: UserData)
+    func updatePhoto(with photo: Data)
     
 }
 
