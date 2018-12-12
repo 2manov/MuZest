@@ -88,8 +88,8 @@ class RegisterView: UIViewController, UITextFieldDelegate, RegisterViewProtocol 
         
         return(true)
     }
-
     
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField == passwordConfirmTextField || textField == emailTextField) {
         animateViewMoving(up: true, moveValue: 100)

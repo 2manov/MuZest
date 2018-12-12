@@ -11,7 +11,9 @@ target 'MuZest' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'iTunesSearchAPI'
-
+  pod 'MBProgressHUD'
+  pod 'MarqueeLabel'
+  pod 'XCGLogger', '~> 4.0.0'
   target 'MuZestTests' do
     inherit! :search_paths
     # Pods for testing

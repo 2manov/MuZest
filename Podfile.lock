@@ -69,11 +69,18 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - iTunesSearchAPI (1.0)
   - leveldb-library (1.20)
+  - MarqueeLabel (3.2.0):
+    - MarqueeLabel/ObjC (= 3.2.0)
+  - MarqueeLabel/ObjC (3.2.0)
+  - MBProgressHUD (1.1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -81,6 +88,9 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - iTunesSearchAPI
+  - MarqueeLabel
+  - MBProgressHUD
+  - XCGLogger (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -97,7 +107,10 @@ SPEC REPOS:
     - GTMSessionFetcher
     - iTunesSearchAPI
     - leveldb-library
+    - MarqueeLabel
+    - MBProgressHUD
     - nanopb
+    - XCGLogger
 
 SPEC CHECKSUMS:
   Firebase: 963d5685fae888a56d6d4d9cfce6b9c976958798
@@ -113,8 +126,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   iTunesSearchAPI: f0ef86fcc9309a91562f70e5d6003c932efb4f68
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 2e270372e38e75319612e1c50cb8fc603447bea0
+PODFILE CHECKSUM: 00ceb705bb2b72c57a671c1d1e25bdeb26f497e2
 
 COCOAPODS: 1.5.3
