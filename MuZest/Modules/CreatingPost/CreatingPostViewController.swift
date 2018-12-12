@@ -25,19 +25,19 @@ class CreatingPostViewController: UIViewController
         print("viewDidLoad")
         super.viewDidLoad()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.clickFunction))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
         photo.addGestureRecognizer(tapGesture)
         photo.isUserInteractionEnabled = true
         
     }
     
-    @objc func clickFunction(){
-        
-        let importMenu = UIDocumentPickerViewController(documentTypes: [String(kUTTypePDF)], in: .import)
-        importMenu.delegate = self
-        importMenu.modalPresentationStyle = .formSheet
-        self.present(importMenu, animated: true, completion: nil)
-    }
+    @objc func handleSelectPhoto(){
+         print("handleSelectPhoto")
+         let pickerController = UIImagePickerController()
+         pickerController.delegate = self
+         present(pickerController, animated: true, completion: nil)
+     
+     }
     
     
     @IBAction func postButton_touch_up_inside(_ sender: UIButton) {
@@ -86,21 +86,15 @@ class CreatingPostViewController: UIViewController
         })
     }
 }
-extension CreatingPostViewController: UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate{
-    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-        let myURL = url as URL
-        print("import result : \(myURL)")
-    }
-    
-    
-    public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
-        documentPicker.delegate = self
-        present(documentPicker, animated: true, completion: nil)
-    }
-    
-    
-    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        print("view was cancelled")
-        dismiss(animated: true, completion: nil)
-    }
-}
+extension CreatingPostViewController: UIImagePickerControllerDelegate,
+ UINavigationControllerDelegate{
+     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+         print("did finish picking media")
+        
+             if let image =  info["UIImagePickerControllerOriginalImage"] as? UIImage{
+                 selectedImage = image
+                 photo.image = image
+         }
+         dismiss(animated: true, completion: nil)
+     }
+ }
