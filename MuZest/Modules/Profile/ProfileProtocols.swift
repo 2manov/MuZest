@@ -24,6 +24,8 @@ protocol ProfileViewProtocol: class {
     var followersLabel: UILabel! {get set}
     var postsLabel: UILabel! {get set}
     
+    func spinSpinner(isActive status: Bool)
+    
 }
 
 protocol ProfileRouterProtocol: class {

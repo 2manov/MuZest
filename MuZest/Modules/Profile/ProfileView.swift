@@ -19,6 +19,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     @IBOutlet weak var scrollView: UIView!
     
+    @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var realNameLabel: UILabel!
@@ -37,24 +38,33 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         
     }
     
-    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+    func heightForView(text:String, font:String = "Helvetica") -> CGFloat{
         aboutLabel.numberOfLines = 0
         aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        aboutLabel.font = font
+        aboutLabel.font = UIFont(name: font, size: 14.0)
         aboutLabel.text = text
         
         aboutLabel.sizeToFit()
         return aboutLabel.frame.height
     }
     
+    func didImageSettings() {
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.borderColor = UIColor.lightGray.cgColor
+        profileImage.layer.borderWidth = 1.5
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
+        didImageSettings()
         
-        let font = UIFont(name: "Helvetica", size: 20.0)
+        
         let s = "This is just a load of text"
-        let height_of_text = heightForView(text:s, font: font!, width: 100.0)
+        
+        let height_of_text = heightForView(text:s)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -63,10 +73,6 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         view.addConstraints([heightConstraint])
         
     }
-    
-    
-    
-    
     
     @IBAction func logout(_ sender: Any) {
         
@@ -79,4 +85,22 @@ class ProfileView: UIViewController, ProfileViewProtocol {
             
             }
         }
+    
+    
+    func spinSpinner(isActive status: Bool = true){
+
+        if status{
+            let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.style = UIActivityIndicatorView.Style.gray
+            loadingIndicator.startAnimating();
+            
+            alert.view.addSubview(loadingIndicator)
+            present(alert, animated: true, completion: nil)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
 }

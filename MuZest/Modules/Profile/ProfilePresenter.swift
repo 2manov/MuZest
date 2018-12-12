@@ -18,7 +18,9 @@ class ProfilePresenter:  ProfilePresenterProtocol {
     }
     
     func configureView() {
+        view.spinSpinner(isActive: true)
         interactor.getUserData()
+        
     }
     
 
@@ -28,6 +30,8 @@ class ProfilePresenter:  ProfilePresenterProtocol {
         view.realNameLabel.text = "\(userData.first_name!) \(userData.last_name!)"
         view.aboutLabel.text = userData.about
         view.followingLabel.text = "followings: \(userData.follows!.split(separator: "\t").count)"
+        
+        view.spinSpinner(isActive: false)
         
     }
 
