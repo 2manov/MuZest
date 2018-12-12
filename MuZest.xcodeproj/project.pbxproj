@@ -10,6 +10,7 @@
 		5067138F96BD1D4E0DBE5A24 /* Pods_MuZestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */; };
 		5BE5010121CAA7061A5A2299 /* Pods_MuZestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC159680DF126814644D620D /* Pods_MuZestTests.framework */; };
 		611D3E8CBDF6B4BB554DACA6 /* Pods_MuZest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 832E0F6DBBA9640CF5F0DADF /* Pods_MuZest.framework */; };
+		7125717421C07FE4007553B4 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125717321C07FE4007553B4 /* CreatePostViewController.swift */; };
 		715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */; };
 		7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2D921A6425C009D457B /* FeedTableViewController.swift */; };
 		7185A2DC21A64485009D457B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2DB21A64485009D457B /* PostCell.swift */; };
@@ -63,6 +64,7 @@
 		19D87E79B646A51D51BB66B6 /* Pods_MuZestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuZestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E43145D8BFFC767D000807F /* Pods-MuZestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestTests/Pods-MuZestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CD017414691393993F3FF6A /* Pods-MuZestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuZestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuZestUITests/Pods-MuZestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7125717321C07FE4007553B4 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7185A2D921A6425C009D457B /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		7185A2DB21A64485009D457B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */,
+				7125717321C07FE4007553B4 /* CreatePostViewController.swift */,
 			);
 			path = CreatingPost;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MuZest/Pods-MuZest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/iTunesSearchAPI/iTunesSearchAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -454,6 +458,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iTunesSearchAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -536,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */,
+				7125717421C07FE4007553B4 /* CreatePostViewController.swift in Sources */,
 				A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */,
 				A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */,
 				A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */,
