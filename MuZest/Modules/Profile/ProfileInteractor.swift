@@ -36,7 +36,7 @@ class ProfileInteractor: ProfileInteractorProtocol {
                         profile_photo_url: dict["profile_photo_url"]
                     )
                     
-                    if dict["profile_photo_url"] != nil {
+                    if dict["profile_photo_url"] != "" {
                         let gsReference = Storage.storage().reference(forURL: dict["profile_photo_url"]!)
                         gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
                             if let error = error {

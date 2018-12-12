@@ -55,11 +55,13 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         
         aboutLabel.sizeToFit()
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let heightConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: realScrollView.frame.size.height + aboutLabel.frame.size.height - 50)
-        
-        view.addConstraints([heightConstraint])
+        DispatchQueue.main.async {
+            self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+            
+            let heightConstraint = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.realScrollView.frame.size.height + self.aboutLabel.frame.height - 50)
+            
+            self.view.addConstraints([heightConstraint])
+        }
     }
     
     func didVisaulSettings() {
@@ -77,11 +79,13 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         presenter.configureView()
         didVisaulSettings()
         
-    }
+
+}
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter.configureView()
+        
     }
 
     

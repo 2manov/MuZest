@@ -17,6 +17,8 @@ class SettingsView: UIViewController, SettingsViewProtocol {
     @IBOutlet weak var profileImageLabel: UIImageView!
     
 
+    @IBOutlet weak var newView: UIView!
+    
     @IBOutlet weak var realNameTextField: UITextField!
     @IBOutlet weak var aboutTextField: UITextView!
     
@@ -57,13 +59,28 @@ class SettingsView: UIViewController, SettingsViewProtocol {
         configurator.configure(with: self)
         presenter.configureView()
         didDisualSettings()
-        
-        
-        
+        self.hideKeyboardWhenTappedAround() 
         //Тап по фото
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
         profileImageLabel.addGestureRecognizer(tapGesture)
         profileImageLabel.isUserInteractionEnabled = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/1.5
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     @objc func handleSelectPhoto(){ //Обработка тапа по фото
@@ -71,15 +88,21 @@ class SettingsView: UIViewController, SettingsViewProtocol {
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     @IBAction func doneButtonClicked(_ sender: Any) { //Сохранение данных о прфоиле
         
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
             presenter.sendPhotoToDatabase(with: imageData)
         }
-            
-        else {
-            showAlert(with: "File cannot be empty")
+        if (realNameTextField.text! != realName){
+            presenter.updateProfileInfo(field: "real_name",with: realNameTextField.text!)
+        }
+        if (aboutTextField.text! != about){
+            presenter.updateProfileInfo(field: "about", with: aboutTextField.text!)
         }
         
     }
@@ -106,4 +129,16 @@ UINavigationControllerDelegate{
     }
 }
 
+// Put this piece of code anywhere you like
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
 

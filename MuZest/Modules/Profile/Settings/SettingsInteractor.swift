@@ -21,7 +21,7 @@ class SettingsInteractor: SettingsInteractorProtocol {
     
     func checkStorage(){
         if Auth.auth().currentUser != nil {
-            ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
+            self.ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
                 if snapshot.value != nil {
                     let dict = snapshot.value as! Dictionary<String,String>
                     
@@ -66,14 +66,34 @@ class SettingsInteractor: SettingsInteractorProtocol {
     
     }
     
+    func updataDataInProfile(field: String, data: String){
+        
+        self.ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
+            if snapshot.value != nil {
+                let postsReference = self.ref.child("users/\(snapshot.key)/\(field)")
+                postsReference.setValue(data, withCompletionBlock: {
+                    (error, ref) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        return
+                    }
+//                    print("Success")
+                })
+            } else {
+                print ("user not found")
+            }
+            
+        })
+        
+        
+    }
+    
     
     func sendPhotoUrlToDatabase(photoUrl : String){
         
-        let ref = Database.database().reference()
-        
-        ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
+        self.ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
             if snapshot.value != nil {
-                let postsReference = ref.child("users/\(snapshot.key)/profile_photo_url")
+                let postsReference = self.ref.child("users/\(snapshot.key)/profile_photo_url")
                 postsReference.setValue(photoUrl, withCompletionBlock: {
                     (error, ref) in
                     if error != nil {

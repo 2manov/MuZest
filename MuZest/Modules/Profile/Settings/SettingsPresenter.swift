@@ -29,5 +29,10 @@ class SettingsPresenter:  SettingsPresenterProtocol {
         interactor.sendDataToDataBase(imageData: imageData)
     }
     
+    func updateProfileInfo(field: String,with data: String){
+        interactor.updataDataInProfile(field: field, data: data)
+        
+    }
+    
     
 }
