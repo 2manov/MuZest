@@ -19,7 +19,23 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     @IBOutlet weak var scrollView: UIView!
     
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var realNameLabel: UILabel!
     @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var postsLabel: UILabel!
+    
+    
+    @IBAction func settingsButtonClicked(_ sender: Any) {
+        
+        guard let myVC = storyboard?.instantiateViewController(withIdentifier: "SettingsView") else {
+            return
+        }
+        navigationController?.pushViewController(myVC, animated: true)
+        
+    }
     
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
         aboutLabel.numberOfLines = 0
@@ -31,13 +47,11 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         return aboutLabel.frame.height
     }
     
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
+        
         let font = UIFont(name: "Helvetica", size: 20.0)
         let s = "This is just a load of text"
         let height_of_text = heightForView(text:s, font: font!, width: 100.0)
@@ -47,6 +61,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         let heightConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: realScrollView.frame.size.height + height_of_text - 50)
         
         view.addConstraints([heightConstraint])
+        
     }
     
     

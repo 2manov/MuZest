@@ -37,6 +37,13 @@
 		A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6649219AD90500E926A6 /* AuthRouter.swift */; };
 		A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */; };
 		A4C63B88219DCEAE00D4C354 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C63B87219DCEAE00D4C354 /* Profile.storyboard */; };
+		A4DA20C121C08B8E00B14B01 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20C021C08B8E00B14B01 /* SettingsView.swift */; };
+		A4DA20C321C08BA100B14B01 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20C221C08BA100B14B01 /* SettingsProtocols.swift */; };
+		A4DA20C521C08BB100B14B01 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20C421C08BB100B14B01 /* SettingsPresenter.swift */; };
+		A4DA20C721C08BC800B14B01 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20C621C08BC800B14B01 /* SettingsConfigurator.swift */; };
+		A4DA20C921C08BDB00B14B01 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20C821C08BDB00B14B01 /* SettingsRouter.swift */; };
+		A4DA20CB21C08C1C00B14B01 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20CA21C08C1C00B14B01 /* SettingsInteractor.swift */; };
+		A4DA20CD21C09F4700B14B01 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA20CC21C09F4700B14B01 /* Structs.swift */; };
 		A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */; };
 		A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */; };
 		A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC85942185D816003F7DB1 /* RegisterConfigurator.swift */; };
@@ -103,6 +110,13 @@
 		A4BE6649219AD90500E926A6 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		A4C63B83219DCE5500D4C354 /* CreatingPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreatingPost.storyboard; sourceTree = "<group>"; };
 		A4C63B87219DCEAE00D4C354 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A4DA20C021C08B8E00B14B01 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A4DA20C221C08BA100B14B01 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
+		A4DA20C421C08BB100B14B01 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		A4DA20C621C08BC800B14B01 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		A4DA20C821C08BDB00B14B01 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		A4DA20CA21C08C1C00B14B01 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		A4DA20CC21C09F4700B14B01 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A4FC858E2185D6EC003F7DB1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A4FC85922185D7EC003F7DB1 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		A4FC85942185D816003F7DB1 /* RegisterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterConfigurator.swift; sourceTree = "<group>"; };
@@ -259,6 +273,7 @@
 		A4C63B80219DCD9E00D4C354 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A4DA20BF21C08B6200B14B01 /* Settings */,
 				715F2EDD21A57B45001BD5BE /* ProfileView.swift */,
 				A425975921BF165A00DD2132 /* ProfileProtocols.swift */,
 				A425975B21BF166C00DD2132 /* ProfilePresenter.swift */,
@@ -296,9 +311,23 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		A4DA20BF21C08B6200B14B01 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A4DA20C021C08B8E00B14B01 /* SettingsView.swift */,
+				A4DA20C221C08BA100B14B01 /* SettingsProtocols.swift */,
+				A4DA20C421C08BB100B14B01 /* SettingsPresenter.swift */,
+				A4DA20C621C08BC800B14B01 /* SettingsConfigurator.swift */,
+				A4DA20C821C08BDB00B14B01 /* SettingsRouter.swift */,
+				A4DA20CA21C08C1C00B14B01 /* SettingsInteractor.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		A4FC859D2185E66A003F7DB1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A4DA20CC21C09F4700B14B01 /* Structs.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -552,20 +581,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DA20CD21C09F4700B14B01 /* Structs.swift in Sources */,
 				A425976021BF169B00DD2132 /* ProfileRouter.swift in Sources */,
 				A425975C21BF166C00DD2132 /* ProfilePresenter.swift in Sources */,
 				A4FC85952185D816003F7DB1 /* RegisterConfigurator.swift in Sources */,
+				A4DA20C721C08BC800B14B01 /* SettingsConfigurator.swift in Sources */,
 				A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */,
 				A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */,
 				A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */,
 				A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */,
 				A4FC859B2185D962003F7DB1 /* RegisterProtocols.swift in Sources */,
+				A4DA20C921C08BDB00B14B01 /* SettingsRouter.swift in Sources */,
 				715F2EDE21A57B45001BD5BE /* ProfileView.swift in Sources */,
 				A425975E21BF168700DD2132 /* ProfileConfigurator.swift in Sources */,
 				7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */,
 				71CF77B821A63D120054CBAC /* Post.swift in Sources */,
 				A4FC85992185D842003F7DB1 /* RegisterInteractor.swift in Sources */,
 				A4BE664A219AD90500E926A6 /* AuthRouter.swift in Sources */,
+				A4DA20CB21C08C1C00B14B01 /* SettingsInteractor.swift in Sources */,
 				719391072177EB390089FBF6 /* AppDelegate.swift in Sources */,
 				A4FC85932185D7EC003F7DB1 /* RegisterRouter.swift in Sources */,
 				A425975A21BF165A00DD2132 /* ProfileProtocols.swift in Sources */,
@@ -574,9 +607,12 @@
 				A41E1E2921898FF1003DB027 /* NetworkReachability.swift in Sources */,
 				A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */,
 				71CF77B621A63CFA0054CBAC /* User.swift in Sources */,
+				A4DA20C321C08BA100B14B01 /* SettingsProtocols.swift in Sources */,
 				A425976221BF16B800DD2132 /* ProfileInteractor.swift in Sources */,
 				A4BE6646219AD8E700E926A6 /* AuthPresenter.swift in Sources */,
 				7185A2DC21A64485009D457B /* PostCell.swift in Sources */,
+				A4DA20C121C08B8E00B14B01 /* SettingsView.swift in Sources */,
+				A4DA20C521C08BB100B14B01 /* SettingsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
