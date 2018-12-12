@@ -19,9 +19,6 @@
 		7125718421C0F1D0007553B4 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125718321C0F1D0007553B4 /* PlayerViewController.swift */; };
 		7125718621C0F2CA007553B4 /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125718521C0F2CA007553B4 /* SongDetailViewController.swift */; };
 		7125718921C0F320007553B4 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125718821C0F320007553B4 /* UIImage.swift */; };
-		7125718B21C0F352007553B4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125718A21C0F352007553B4 /* UIFont.swift */; };
-		7125719021C0F72C007553B4 /* CalibriBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7125718E21C0F72C007553B4 /* CalibriBold.ttf */; };
-		7125719121C0F72C007553B4 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7125718F21C0F72C007553B4 /* Calibri.ttf */; };
 		715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */; };
 		7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2D921A6425C009D457B /* FeedTableViewController.swift */; };
 		7185A2DC21A64485009D457B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2DB21A64485009D457B /* PostCell.swift */; };
@@ -84,9 +81,6 @@
 		7125718321C0F1D0007553B4 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		7125718521C0F2CA007553B4 /* SongDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewController.swift; sourceTree = "<group>"; };
 		7125718821C0F320007553B4 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		7125718A21C0F352007553B4 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		7125718E21C0F72C007553B4 /* CalibriBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CalibriBold.ttf; path = ../../../Player/Player/Player/Resources/CalibriBold.ttf; sourceTree = "<group>"; };
-		7125718F21C0F72C007553B4 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Calibri.ttf; path = ../../../Player/Player/Player/Resources/Calibri.ttf; sourceTree = "<group>"; };
 		715F2EDD21A57B45001BD5BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7185A2D921A6425C009D457B /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		7185A2DB21A64485009D457B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -193,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				7125718821C0F320007553B4 /* UIImage.swift */,
-				7125718A21C0F352007553B4 /* UIFont.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -202,8 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				7193910D2177EB390089FBF6 /* Assets.xcassets */,
-				7125718F21C0F72C007553B4 /* Calibri.ttf */,
-				7125718E21C0F72C007553B4 /* CalibriBold.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -475,7 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CF77AE21A63B3F0054CBAC /* Feed.storyboard in Resources */,
-				7125719021C0F72C007553B4 /* CalibriBold.ttf in Resources */,
 				C12D8729217BB39900E678D5 /* Podfile in Resources */,
 				A4C63B88219DCEAE00D4C354 /* Profile.storyboard in Resources */,
 				719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */,
@@ -483,7 +473,6 @@
 				A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */,
 				7193910E2177EB390089FBF6 /* Assets.xcassets in Resources */,
 				7193910C2177EB390089FBF6 /* Main.storyboard in Resources */,
-				7125719121C0F72C007553B4 /* Calibri.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +610,6 @@
 				A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */,
 				7125717921C0EE42007553B4 /* PlayerManager.swift in Sources */,
 				A4FC859B2185D962003F7DB1 /* RegisterProtocols.swift in Sources */,
-				7125718B21C0F352007553B4 /* UIFont.swift in Sources */,
 				715F2EDE21A57B45001BD5BE /* ProfileViewController.swift in Sources */,
 				7185A2DA21A6425C009D457B /* FeedTableViewController.swift in Sources */,
 				71CF77B821A63D120054CBAC /* Post.swift in Sources */,

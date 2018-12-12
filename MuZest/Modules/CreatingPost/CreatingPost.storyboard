@@ -17,7 +17,6 @@
         <!--Create-->
         <scene sceneID="KYV-ZT-xUT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JJA-8q-g24" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xK7-XS-6Ag" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8n-Kk-0Bf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -50,18 +49,18 @@
                     <navigationItem key="navigationItem" title="Create" id="PEl-WD-FMy">
                         <barButtonItem key="rightBarButtonItem" image="barButtonItem:zqA-tE-Xop:image" style="plain" id="zqA-tE-Xop">
                             <connections>
-                                <segue destination="3Y9-uI-Ffn" kind="presentation" id="Kip-fk-omt"/>
+                                <segue destination="3Y9-uI-Ffn" kind="show" id="tIA-a0-LNF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJA-8q-g24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3508" y="-80.50974512743629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SKb-xx-zDU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="03A-Nz-rp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xTU-QS-6gI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tabBarItem:fZA-ta-f2A:image" id="fZA-ta-f2A">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -76,13 +75,13 @@
                         <segue destination="xK7-XS-6Ag" kind="relationship" relationship="rootViewController" id="bnE-nA-eUW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03A-Nz-rp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2568.8000000000002" y="-80.50974512743629"/>
         </scene>
         <!--Browse View Controller-->
         <scene sceneID="v1p-Fj-Rr3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NjL-Rq-MOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3Y9-uI-Ffn" customClass="BrowseViewController" customModule="MuZest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4s-5l-cKG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -95,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="70" id="Mx5-Y3-hVa" customClass="SongCell" customModule="Player" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="70" id="Mx5-Y3-hVa" customClass="SongCell" customModule="MuZest" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mx5-Y3-hVa" id="sw1-tI-Kl0">
@@ -194,14 +193,14 @@
                         <outlet property="tableView" destination="BFZ-wW-v3z" id="5V4-Ot-Q7j"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NjL-Rq-MOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4622" y="-81"/>
+            <point key="canvasLocation" x="2710" y="775"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="7cl-fA-b6F">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hYM-tx-Ggb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="playerVC" id="X6W-WL-Gln" customClass="PlayerViewController" customModule="Player" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playerVC" id="X6W-WL-Gln" customClass="PlayerViewController" customModule="MuZest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2WW-NR-G0R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,8 +341,9 @@
                         <outlet property="previousButton" destination="lRq-Mi-34Z" id="JwT-Iy-kO0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYM-tx-Ggb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5586" y="-81"/>
+            <point key="canvasLocation" x="3673" y="775"/>
         </scene>
     </scenes>
     <resources>

@@ -33,8 +33,7 @@ class BrowseViewController: UIViewController {
 
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .always
-            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,
-                                                                                 NSAttributedString.Key.font: UIFont.mainBoldFont.withSize(40)]
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         }
     }
     
