@@ -15,10 +15,12 @@ class SettingsView: UIViewController, SettingsViewProtocol {
     var imageProfile : UIImage!
     
     @IBOutlet weak var profileImageLabel: UIImageView!
+    
 
     @IBOutlet weak var realNameTextField: UITextField!
     @IBOutlet weak var aboutTextField: UITextView!
     
+    var photo : UIImage?
     var realName : String?
     var about : String?
     
@@ -40,6 +42,7 @@ class SettingsView: UIViewController, SettingsViewProtocol {
         
         realNameTextField.text = realName
         aboutTextField.text = about
+        profileImageLabel.image = photo
     }
     
     
@@ -74,9 +77,11 @@ class SettingsView: UIViewController, SettingsViewProtocol {
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
             presenter.sendPhotoToDatabase(with: imageData)
         }
+            
         else {
             showAlert(with: "File cannot be empty")
         }
+        
     }
     
     func showAlert(with error: String) {

@@ -38,6 +38,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
             let destinationVC = segue.destination as! SettingsView // Не лучше ли протокол?
             destinationVC.realName = realNameLabel.text ?? ""
             destinationVC.about = aboutLabel.text ?? ""
+            destinationVC.photo = profileImage.image
             }
     }
     
@@ -77,6 +78,12 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         didVisaulSettings()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.configureView()
+    }
+
     
     @IBAction func logout(_ sender: Any) {
         

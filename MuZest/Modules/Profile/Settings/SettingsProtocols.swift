@@ -26,7 +26,6 @@ protocol SettingsRouterProtocol: class {
 }
 
 protocol SettingsInteractorProtocol: class {
-    func getUserData()
     
     func sendDataToDataBase(imageData: Data)
 }
