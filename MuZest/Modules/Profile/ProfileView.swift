@@ -38,7 +38,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         
     }
     
-    func heightForView(text:String, font:String = "Helvetica") -> CGFloat{
+    func heightForTextView(text:String, font:String = "Helvetica") -> CGFloat{
         aboutLabel.numberOfLines = 0
         aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         aboutLabel.font = UIFont(name: font, size: 14.0)
@@ -48,23 +48,25 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         return aboutLabel.frame.height
     }
     
-    func didImageSettings() {
+    func didVisaulSettings() {
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.layer.masksToBounds = true
         profileImage.layer.borderColor = UIColor.lightGray.cgColor
         profileImage.layer.borderWidth = 1.5
+        
+        realNameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
-        didImageSettings()
+        didVisaulSettings()
         
         
         let s = "This is just a load of text"
         
-        let height_of_text = heightForView(text:s)
+        let height_of_text = heightForTextView(text:s)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         

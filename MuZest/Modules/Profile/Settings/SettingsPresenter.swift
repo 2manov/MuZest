@@ -20,6 +20,9 @@ class SettingsPresenter:  SettingsPresenterProtocol {
     func configureView() {
     }
     
+    func updateView(_ userData: UserData) {
+        view.fillDataUser(userData.first_name ?? "", userData.last_name ?? "", userData.about ?? "")
+    }
     
     
 }

@@ -37,7 +37,10 @@ class ProfileInteractor: ProfileInteractorProtocol {
                         follows : dict["follows"],
                         profile_photo_url : dict["profile_photo_url"]
                     )
-                    self.presenter.updateView(self.userData[snapshot.key]!)
+                    DispatchQueue.main.async {
+                        self.presenter.updateView(self.userData[snapshot.key]!)
+                    }
+                
                 }
                 else {
                     print ("user not found")
