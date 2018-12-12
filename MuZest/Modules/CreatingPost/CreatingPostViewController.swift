@@ -11,7 +11,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseStorage
 import MobileCoreServices
-import iTunesSearchAPI
+// import iTunesSearchAPI
 
 class CreatingPostViewController: UIViewController
 {
