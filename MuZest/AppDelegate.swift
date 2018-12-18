@@ -76,8 +76,8 @@ class MyProfile {
                         self.real_name = dict["real_name"]
                         self.about =  dict["about"]
                         self.follow_names = dict["follows"]?.split(separator: "\t")
-                        self.follower_names = "followers".split(separator: "\t")
-                        self.post_ids =  "post".split(separator :"\t")
+                        self.follower_names = "".split(separator: "\t")
+                        self.post_ids =  "".split(separator :"\t")
                     }
                     
                 }
@@ -133,7 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        MyProfile.shared.loadPhotoStatus = false
+        print(MyProfile.shared)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

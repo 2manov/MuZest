@@ -23,10 +23,10 @@ class ProfilePresenter:  ProfilePresenterProtocol {
             self.view.nameLabel.text = MyProfile.shared.username
             self.view.realNameLabel.text = "\(MyProfile.shared.real_name ?? "")"
             self.view.heightForTextView(text:MyProfile.shared.about ?? "")
-            self.view.followingLabel.text = "followings: \(String(describing: MyProfile.shared.follow_names!.count))"
-            self.view.postsLabel.text = "posts: \(String(describing: MyProfile.shared.post_ids!.count))"
-            self.view.followersLabel.text = "followers: \(String(describing: MyProfile.shared.follower_names!.count))"
-            if MyProfile.shared.loadPhotoStatus!{
+            self.view.followingLabel.text = "followings: " + String(MyProfile.shared.follow_names?.count ?? 0)
+            self.view.postsLabel.text = "posts: " + String(MyProfile.shared.post_ids?.count ?? 0)
+            self.view.followersLabel.text = "followers: " + String( MyProfile.shared.follower_names?.count ?? 0)
+            if let _ = MyProfile.shared.loadPhotoStatus {
                 self.view.setDataToPhoto(with: MyProfile.shared.photo!)
             }
         }
