@@ -23,7 +23,6 @@
 		7185A2DC21A64485009D457B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7185A2DB21A64485009D457B /* PostCell.swift */; };
 		719391072177EB390089FBF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391062177EB390089FBF6 /* AppDelegate.swift */; };
 		7193910C2177EB390089FBF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7193910A2177EB390089FBF6 /* Main.storyboard */; };
-		7193910E2177EB390089FBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7193910D2177EB390089FBF6 /* Assets.xcassets */; };
 		719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7193910F2177EB390089FBF6 /* LaunchScreen.storyboard */; };
 		7193911C2177EB390089FBF6 /* MuZestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193911B2177EB390089FBF6 /* MuZestTests.swift */; };
 		719391272177EB390089FBF6 /* MuZestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719391262177EB390089FBF6 /* MuZestUITests.swift */; };
@@ -37,6 +36,7 @@
 		A425975E21BF168700DD2132 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975D21BF168700DD2132 /* ProfileConfigurator.swift */; };
 		A425976021BF169B00DD2132 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975F21BF169B00DD2132 /* ProfileRouter.swift */; };
 		A425976221BF16B800DD2132 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425976121BF16B800DD2132 /* ProfileInteractor.swift */; };
+		A4472EE321C875A300833CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4472EE221C875A300833CAD /* Assets.xcassets */; };
 		A467ADE821C1696C00C12F17 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A467ADE721C1696C00C12F17 /* ProfileView.swift */; };
 		A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE663F219AD7E100E926A6 /* AuthView.swift */; };
 		A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6641219AD83300E926A6 /* AuthProtocols.swift */; };
@@ -98,7 +98,6 @@
 		719391032177EB390089FBF6 /* MuZest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuZest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719391062177EB390089FBF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7193910B2177EB390089FBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7193910D2177EB390089FBF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		719391102177EB390089FBF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		719391122177EB390089FBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		719391172177EB390089FBF6 /* MuZestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuZestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +118,7 @@
 		A425975D21BF168700DD2132 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
 		A425975F21BF169B00DD2132 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		A425976121BF16B800DD2132 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		A4472EE221C875A300833CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../_MuZest/MuZest/Assets.xcassets; sourceTree = "<group>"; };
 		A467ADE721C1696C00C12F17 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A4BE663F219AD7E100E926A6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A4BE6641219AD83300E926A6 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
@@ -215,17 +215,10 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		7125718D21C0F6E0007553B4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7193910D2177EB390089FBF6 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		719390FA2177EB390089FBF6 = {
 			isa = PBXGroup;
 			children = (
+				A4472EDF21C8749000833CAD /* Resourses */,
 				C12D8728217BB39900E678D5 /* Podfile */,
 				719391052177EB390089FBF6 /* MuZest */,
 				7193911A2177EB390089FBF6 /* MuZestTests */,
@@ -254,7 +247,6 @@
 				C12D8724217BB35800E678D5 /* GoogleService-Info.plist */,
 				719391062177EB390089FBF6 /* AppDelegate.swift */,
 				7193910A2177EB390089FBF6 /* Main.storyboard */,
-				7125718D21C0F6E0007553B4 /* Resources */,
 				7193910F2177EB390089FBF6 /* LaunchScreen.storyboard */,
 				719391122177EB390089FBF6 /* Info.plist */,
 			);
@@ -298,6 +290,14 @@
 				A41E1E2821898FF1003DB027 /* NetworkReachability.swift */,
 			);
 			path = NetworkReachability;
+			sourceTree = "<group>";
+		};
+		A4472EDF21C8749000833CAD /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				A4472EE221C875A300833CAD /* Assets.xcassets */,
+			);
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 		A4BE663E219AD77300E926A6 /* Auth */ = {
@@ -515,7 +515,7 @@
 				719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */,
 				C12D8725217BB35800E678D5 /* GoogleService-Info.plist in Resources */,
 				A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */,
-				7193910E2177EB390089FBF6 /* Assets.xcassets in Resources */,
+				A4472EE321C875A300833CAD /* Assets.xcassets in Resources */,
 				7193910C2177EB390089FBF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

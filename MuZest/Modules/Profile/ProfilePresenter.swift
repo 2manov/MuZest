@@ -19,9 +19,17 @@ class ProfilePresenter:  ProfilePresenterProtocol {
     }
     
     func configureView() {
-        view.spinSpinner(isActive: true)
-        interactor.getUserData()
-        
+        DispatchQueue.main.async {
+            self.view.nameLabel.text = MyProfile.shared.username
+            self.view.realNameLabel.text = "\(MyProfile.shared.real_name ?? "")"
+            self.view.heightForTextView(text:MyProfile.shared.about ?? "")
+            self.view.followingLabel.text = "followings: \(String(describing: MyProfile.shared.follow_names!.count))"
+            self.view.postsLabel.text = "posts: \(String(describing: MyProfile.shared.post_ids!.count))"
+            self.view.followersLabel.text = "followers: \(String(describing: MyProfile.shared.follower_names!.count))"
+            if MyProfile.shared.loadPhotoStatus{
+                self.view.setDataToPhoto(with: MyProfile.shared.photo!)
+            }
+        }
     }
     
     func updateView(_ userData: UserData) {

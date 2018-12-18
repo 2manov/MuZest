@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import XCGLogger
 
+
+
 let log: XCGLogger = {
     let log = XCGLogger.default
     
@@ -31,6 +33,58 @@ let log: XCGLogger = {
     return log
 }()
 
+class MyProfile {
+    
+    private let ref = Database.database().reference()
+    
+    var username: String?
+    var real_name: String?
+    var about: String?
+    var follow_names: Array<Substring>?
+    var photo: Data?
+    var follower_names: Array<Substring>?
+    var post_ids: Array<Substring>?
+    
+    var loadPhotoStatus : Bool = false
+    
+    static let shared = MyProfile()
+    
+    private init() {
+        if Auth.auth().currentUser != nil {
+            ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
+                if snapshot.value != nil {
+                    let dict = snapshot.value as! Dictionary<String,String>
+                    DispatchQueue.main.async {
+                        self.username =  snapshot.key
+                        self.real_name = dict["real_name"]
+                        self.about =  dict["about"]
+                        self.follow_names = dict["follows"]?.split(separator: "\t")
+                        self.follower_names = "followers".split(separator: "\t")
+                        self.post_ids =  "post".split(separator :"\t")
+                    }
+                    if dict["profile_photo_url"] != ""  {
+                        let gsReference = Storage.storage().reference(forURL: dict["profile_photo_url"]!)
+                        gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                            if let error = error {
+                                print(error)
+                            } else {
+                                DispatchQueue.main.async {
+                                    self.photo = data!
+                                    self.loadPhotoStatus = true
+                                }
+                            }
+                        }
+                    }
+                }
+                else {
+                    print ("profile can't fill")
+                }
+            })
+        }
+    }
+    
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -41,7 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
      
-        
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         if Auth.auth().currentUser == nil
@@ -56,8 +109,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.window?.makeKeyAndVisible()
-        
-        
         
         return true
     }
@@ -77,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        print(MyProfile.shared)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -85,5 +136,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
 }
-

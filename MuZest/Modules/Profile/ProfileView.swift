@@ -81,14 +81,11 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         presenter.configureView()
         didVisaulSettings()
         
-
 }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(true)
         presenter.configureView()
-        
-       
     }
 
     

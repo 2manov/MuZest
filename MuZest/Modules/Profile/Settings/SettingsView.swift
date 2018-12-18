@@ -97,12 +97,15 @@ class SettingsView: UIViewController, SettingsViewProtocol {
         
         if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1){
             presenter.sendPhotoToDatabase(with: imageData)
+            MyProfile.shared.photo = imageData
         }
         if (realNameTextField.text! != realName){
             presenter.updateProfileInfo(field: "real_name",with: realNameTextField.text!)
+            MyProfile.shared.real_name = realNameTextField.text!
         }
         if (aboutTextField.text! != about){
             presenter.updateProfileInfo(field: "about", with: aboutTextField.text!)
+            MyProfile.shared.about = aboutTextField.text!
         }
         
     }
@@ -129,7 +132,6 @@ UINavigationControllerDelegate{
     }
 }
 
-// Put this piece of code anywhere you like
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
