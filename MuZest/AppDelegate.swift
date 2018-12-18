@@ -45,7 +45,7 @@ class MyProfile {
     var follower_names: Array<Substring>?
     var post_ids: Array<Substring>?
     
-    var loadPhotoStatus : Bool = false
+    var loadPhotoStatus : Bool?
     
     static let shared = MyProfile()
     
@@ -54,14 +54,6 @@ class MyProfile {
             ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
                 if snapshot.value != nil {
                     let dict = snapshot.value as! Dictionary<String,String>
-                    DispatchQueue.main.async {
-                        self.username =  snapshot.key
-                        self.real_name = dict["real_name"]
-                        self.about =  dict["about"]
-                        self.follow_names = dict["follows"]?.split(separator: "\t")
-                        self.follower_names = "followers".split(separator: "\t")
-                        self.post_ids =  "post".split(separator :"\t")
-                    }
                     if dict["profile_photo_url"] != ""  {
                         let gsReference = Storage.storage().reference(forURL: dict["profile_photo_url"]!)
                         gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
@@ -75,6 +67,15 @@ class MyProfile {
                             }
                         }
                     }
+                    DispatchQueue.main.async {
+                        self.username =  snapshot.key
+                        self.real_name = dict["real_name"]
+                        self.about =  dict["about"]
+                        self.follow_names = dict["follows"]?.split(separator: "\t")
+                        self.follower_names = "followers".split(separator: "\t")
+                        self.post_ids =  "post".split(separator :"\t")
+                    }
+                  
                 }
                 else {
                     print ("profile can't fill")
@@ -128,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        print(MyProfile.shared)
+        MyProfile.shared.loadPhotoStatus = false
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

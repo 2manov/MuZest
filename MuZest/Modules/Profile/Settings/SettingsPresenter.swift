@@ -31,7 +31,6 @@ class SettingsPresenter:  SettingsPresenterProtocol {
     
     func updateProfileInfo(field: String,with data: String){
         interactor.updataDataInProfile(field: field, data: data)
-        
     }
     
     

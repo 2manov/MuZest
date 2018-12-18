@@ -72,7 +72,7 @@ class SettingsView: UIViewController, SettingsViewProtocol {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height/1.5
+                self.view.frame.origin.y -= keyboardSize.height/1.2
             }
         }
     }
@@ -107,11 +107,11 @@ class SettingsView: UIViewController, SettingsViewProtocol {
             presenter.updateProfileInfo(field: "about", with: aboutTextField.text!)
             MyProfile.shared.about = aboutTextField.text!
         }
-        
+        showAlert(title: "Success", message: nil)
     }
     
-    func showAlert(with error: String) {
-        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+    func showAlert(title: String?, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         
         alertController.addAction(defaultAction)

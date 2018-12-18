@@ -18,6 +18,7 @@ protocol SettingsConfiguratorProtocol: class {
 protocol SettingsViewProtocol: class {
     
     func fillDataUser(_ real_name: String, _ about: String)
+    func showAlert(title: String?, message: String?)
 }
 
 protocol SettingsRouterProtocol: class {

@@ -26,7 +26,7 @@ class ProfilePresenter:  ProfilePresenterProtocol {
             self.view.followingLabel.text = "followings: \(String(describing: MyProfile.shared.follow_names!.count))"
             self.view.postsLabel.text = "posts: \(String(describing: MyProfile.shared.post_ids!.count))"
             self.view.followersLabel.text = "followers: \(String(describing: MyProfile.shared.follower_names!.count))"
-            if MyProfile.shared.loadPhotoStatus{
+            if MyProfile.shared.loadPhotoStatus!{
                 self.view.setDataToPhoto(with: MyProfile.shared.photo!)
             }
         }

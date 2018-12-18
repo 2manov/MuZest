@@ -48,19 +48,18 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     
     func heightForTextView(text:String){
-        aboutLabel.numberOfLines = 0
-        aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        aboutLabel.font = UIFont(name: "Helvetica", size: 16.0)
-        aboutLabel.text = text
-        
-        aboutLabel.sizeToFit()
+        self.aboutLabel.numberOfLines = 0
+        self.aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.aboutLabel.font = UIFont(name: "Helvetica", size: 16.0)
+        self.aboutLabel.text = text
+        self.aboutLabel.sizeToFit()
         
         DispatchQueue.main.async {
             self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-            
-            let heightConstraint = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.realScrollView.frame.size.height + self.aboutLabel.frame.height - 50)
+            let heightConstraint = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.realScrollView.frame.size.height + self.aboutLabel.frame.height)
             
             self.view.addConstraints([heightConstraint])
+            self.scrollView.addConstraints([heightConstraint])
         }
     }
     
@@ -68,7 +67,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.layer.masksToBounds = true
         profileImage.layer.borderColor = UIColor.lightGray.cgColor
-        profileImage.layer.borderWidth = 1.5
+        profileImage.layer.borderWidth = 2
         
         realNameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         

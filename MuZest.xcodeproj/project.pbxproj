@@ -37,7 +37,7 @@
 		A425976021BF169B00DD2132 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425975F21BF169B00DD2132 /* ProfileRouter.swift */; };
 		A425976221BF16B800DD2132 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425976121BF16B800DD2132 /* ProfileInteractor.swift */; };
 		A467ADE821C1696C00C12F17 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A467ADE721C1696C00C12F17 /* ProfileView.swift */; };
-		A482816E21C879080088C728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A482816D21C879080088C728 /* Assets.xcassets */; };
+		A482817021C9252C0088C728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A482816F21C9252B0088C728 /* Assets.xcassets */; };
 		A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE663F219AD7E100E926A6 /* AuthView.swift */; };
 		A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6641219AD83300E926A6 /* AuthProtocols.swift */; };
 		A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */; };
@@ -119,7 +119,7 @@
 		A425975F21BF169B00DD2132 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		A425976121BF16B800DD2132 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		A467ADE721C1696C00C12F17 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		A482816D21C879080088C728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A482816F21C9252B0088C728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4BE663F219AD7E100E926A6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A4BE6641219AD83300E926A6 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 		A482816A21C878A30088C728 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
-				A482816D21C879080088C728 /* Assets.xcassets */,
+				A482816F21C9252B0088C728 /* Assets.xcassets */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -515,7 +515,7 @@
 				719391112177EB390089FBF6 /* LaunchScreen.storyboard in Resources */,
 				C12D8725217BB35800E678D5 /* GoogleService-Info.plist in Resources */,
 				A4C63B84219DCE5500D4C354 /* CreatingPost.storyboard in Resources */,
-				A482816E21C879080088C728 /* Assets.xcassets in Resources */,
+				A482817021C9252C0088C728 /* Assets.xcassets in Resources */,
 				7193910C2177EB390089FBF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
