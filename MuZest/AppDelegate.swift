@@ -50,6 +50,10 @@ class MyProfile {
     static let shared = MyProfile()
     
     private init() {
+        updateData()
+    }
+    
+    func updateData(){
         if Auth.auth().currentUser != nil {
             ref.child("users").queryOrdered(byChild: "user_id").queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .childAdded, with: { snapshot in
                 if snapshot.value != nil {
@@ -75,7 +79,7 @@ class MyProfile {
                         self.follower_names = "followers".split(separator: "\t")
                         self.post_ids =  "post".split(separator :"\t")
                     }
-                  
+                    
                 }
                 else {
                     print ("profile can't fill")

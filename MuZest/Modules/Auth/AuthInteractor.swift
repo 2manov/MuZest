@@ -32,6 +32,7 @@ class AuthInteractor : AuthInteractorProtocol {
                     return
                 } else {
                     self.presenter.authSuccess()
+                    MyProfile.shared.updateData()
                 }
             }
         } else {

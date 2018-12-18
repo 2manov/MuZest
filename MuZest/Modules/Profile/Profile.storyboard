@@ -40,41 +40,38 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="about" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbK-Lu-pIH">
-                                                <rect key="frame" x="16" y="240.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="261" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gR-4N-Bep">
-                                                <rect key="frame" x="16" y="301.5" width="88" height="21"/>
+                                                <rect key="frame" x="16" y="322" width="88" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="follows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMo-9d-4l3">
-                                                <rect key="frame" x="16" y="271" width="53.5" height="20.5"/>
+                                                <rect key="frame" x="16" y="291.5" width="53.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posts: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gc-5K-mhu">
-                                                <rect key="frame" x="16" y="332.5" width="62" height="21"/>
+                                                <rect key="frame" x="16" y="353" width="62" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz2-xl-FKs">
-                                                <rect key="frame" x="187.5" y="230.5" width="0.0" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz2-xl-FKs">
+                                                <rect key="frame" x="146.5" y="230.5" width="82.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PA4-Ll-yhj">
-                                                <rect key="frame" x="0.0" y="379" width="375" height="176"/>
+                                                <rect key="frame" x="0.0" y="399.5" width="375" height="622"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="176" id="df9-C1-3kl" userLabel="height = 300"/>
-                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RmI-1T-B92">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -84,7 +81,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="There is will be only your posts " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-EI-jSi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -137,6 +134,7 @@
                                     <constraint firstAttribute="bottom" secondItem="HB2-r2-Wcq" secondAttribute="bottom" id="HDB-R9-cka"/>
                                     <constraint firstItem="HB2-r2-Wcq" firstAttribute="top" secondItem="Gyx-Sx-dH3" secondAttribute="top" id="SYj-tP-5xz"/>
                                     <constraint firstItem="HB2-r2-Wcq" firstAttribute="leading" secondItem="Gyx-Sx-dH3" secondAttribute="leading" id="UEn-eb-K6h"/>
+                                    <constraint firstAttribute="bottom" secondItem="PA4-Ll-yhj" secondAttribute="bottom" constant="-21.5" id="UzJ-RF-b8e"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

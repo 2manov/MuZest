@@ -56,7 +56,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
         
         DispatchQueue.main.async {
             self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-            let heightConstraint = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.realScrollView.frame.size.height + self.aboutLabel.frame.height)
+            let heightConstraint = NSLayoutConstraint(item: self.scrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: self.realScrollView.frame.size.height + self.aboutLabel.frame.height + 250)
             
             self.view.addConstraints([heightConstraint])
             self.scrollView.addConstraints([heightConstraint])
