@@ -22,8 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-yc-c7U">
+                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="TYl-Td-5fI"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-kO-FAy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="252" width="375" height="355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="post_songCell" rowHeight="70" id="Y6G-Rj-gNH">
@@ -36,13 +46,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-kt-8RE">
+                                <rect key="frame" x="164" y="615" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Jbo-kO-FAy" firstAttribute="trailing" secondItem="t7h-iz-VhW" secondAttribute="trailing" id="9Es-St-z2V"/>
+                            <constraint firstItem="Jbo-kO-FAy" firstAttribute="top" secondItem="G2u-yc-c7U" secondAttribute="bottom" constant="8" id="PDr-QL-Krf"/>
                             <constraint firstItem="Jbo-kO-FAy" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" id="TRa-al-AsO"/>
+                            <constraint firstItem="t7h-iz-VhW" firstAttribute="bottom" secondItem="hvV-kt-8RE" secondAttribute="bottom" constant="22" id="VUa-Wa-8v2"/>
+                            <constraint firstItem="t7h-iz-VhW" firstAttribute="trailing" secondItem="hvV-kt-8RE" secondAttribute="trailing" constant="165" id="XLx-Pa-paP"/>
+                            <constraint firstItem="G2u-yc-c7U" firstAttribute="trailing" secondItem="t7h-iz-VhW" secondAttribute="trailing" id="Xyk-pr-M84"/>
+                            <constraint firstItem="hvV-kt-8RE" firstAttribute="top" secondItem="Jbo-kO-FAy" secondAttribute="bottom" constant="8" id="at0-cE-Hle"/>
                             <constraint firstItem="Jbo-kO-FAy" firstAttribute="trailing" secondItem="h8n-Kk-0Bf" secondAttribute="trailing" id="bda-ZC-Ev7"/>
-                            <constraint firstAttribute="bottom" secondItem="Jbo-kO-FAy" secondAttribute="bottom" id="e49-JL-Wfz"/>
-                            <constraint firstItem="Jbo-kO-FAy" firstAttribute="top" secondItem="h8n-Kk-0Bf" secondAttribute="top" id="qk1-LN-D0c"/>
+                            <constraint firstItem="Jbo-kO-FAy" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" id="cno-dH-zjq"/>
+                            <constraint firstItem="G2u-yc-c7U" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" id="egQ-G4-kVQ"/>
+                            <constraint firstItem="G2u-yc-c7U" firstAttribute="top" secondItem="t7h-iz-VhW" secondAttribute="top" id="lVE-6r-SOf"/>
+                            <constraint firstItem="hvV-kt-8RE" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" constant="164" id="ubB-o0-Q5V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t7h-iz-VhW"/>
                     </view>
