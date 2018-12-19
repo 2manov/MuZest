@@ -40,6 +40,8 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
                 cell.followersLabel.text = correctUsers[correctUserNames[indexPath.row]]!.followers ?? ""
                 if let photoData =  correctUsers[correctUserNames[indexPath.row]]!.photoData{
                     cell.profileImage.image = UIImage(data: photoData)
+                } else {
+                    cell.profileImage.image = UIImage(named: "brendon")
                 }
             }
         }
@@ -71,11 +73,18 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
         super.viewDidLoad()
         fillArrayOfNames()
         setUpSearchBar()
+        alterLayout()
         
         tableView.dataSource = self
         tableView.delegate = self
         
 
+    }
+    
+    func alterLayout() {
+        searchBar.showsScopeBar = false
+        searchBar.placeholder = "Search User by Name"
+        
     }
     
     private func setUpSearchBar() {
