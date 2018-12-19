@@ -237,15 +237,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="realName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4g-GN-bnn">
-                                                    <rect key="frame" x="113" y="46" width="211" height="21"/>
+                                                    <rect key="frame" x="113" y="46" width="191" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-bd-gjC">
-                                                    <rect key="frame" x="334" y="41" width="50" height="28.5"/>
+                                                    <rect key="frame" x="314" y="41" width="70" height="28.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="efM-Rt-zDb"/>
+                                                        <constraint firstAttribute="width" constant="70" id="efM-Rt-zDb"/>
                                                     </constraints>
                                                     <state key="normal" title="Follow"/>
                                                     <connections>
@@ -253,13 +253,13 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-Vt-0V0">
-                                                    <rect key="frame" x="113" y="15" width="211" height="21"/>
+                                                    <rect key="frame" x="113" y="15" width="191" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3K-aX-WsO">
-                                                    <rect key="frame" x="113" y="77" width="211" height="21"/>
+                                                    <rect key="frame" x="113" y="77" width="191" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -285,6 +285,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="followButton" destination="aVT-bd-gjC" id="IB2-xd-9qr"/>
                                             <outlet property="followersLabel" destination="g3K-aX-WsO" id="p71-vk-1Fp"/>
                                             <outlet property="profileImage" destination="duW-OE-1dQ" id="jW3-xk-15M"/>
                                             <outlet property="realNameLabel" destination="o4g-GN-bnn" id="E2V-BC-aur"/>

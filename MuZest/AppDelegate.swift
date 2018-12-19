@@ -40,10 +40,10 @@ class MyProfile {
     var username: String?
     var real_name: String?
     var about: String?
-    var follow_names: Array<Substring>?
+    var follow_names: Array<String>?
     var photo: Data?
-    var follower_names: Array<Substring>?
-    var post_ids: Array<Substring>?
+    var follower_names: Array<String>?
+    var post_ids: Array<String>?
     
     var loadPhotoStatus : Bool?
     
@@ -75,9 +75,9 @@ class MyProfile {
                         self.username =  snapshot.key
                         self.real_name = dict["real_name"]
                         self.about =  dict["about"]
-                        self.follow_names = dict["follows"]?.split(separator: "\t")
-                        self.follower_names = "".split(separator: "\t")
-                        self.post_ids =  "".split(separator :"\t")
+                        self.follow_names = dict["follows"]?.components(separatedBy: "\t")
+                        self.follower_names = "".components(separatedBy: "\t")
+                        self.post_ids =  "".components(separatedBy :"\t")
                     }
                     
                 }

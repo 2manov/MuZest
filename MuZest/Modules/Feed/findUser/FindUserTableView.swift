@@ -36,6 +36,13 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
         if !(correctUserNames.isEmpty){
             if (correctUsers[correctUserNames[indexPath.row]] != nil){
                 cell.userNameLabel.text = correctUserNames[indexPath.row]
+                
+                if MyProfile.shared.follow_names!.contains(correctUserNames[indexPath.row]) {
+                    cell.followButton.setTitle("Unfollow",for: .normal)
+                } else {
+                    cell.followButton.setTitle("Follow",for: .normal)
+                }
+                
                 cell.realNameLabel.text = correctUsers[correctUserNames[indexPath.row]]!.realName ?? ""
                 cell.followersLabel.text = correctUsers[correctUserNames[indexPath.row]]!.followers ?? ""
                 if let photoData =  correctUsers[correctUserNames[indexPath.row]]!.photoData{
@@ -96,7 +103,7 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
             if snapshot.value != nil {
                 let dict = snapshot.value as! Dictionary<String,Any>
                 DispatchQueue.main.async {
-                    self.userNames = Array(dict.keys)
+                    self.userNames = Array(dict.keys).filter { $0 != MyProfile.shared.username }
                     self.correctUserNames = Array(dict.keys)
                     self.getDataOfUsers(with : self.userNames)
                 }

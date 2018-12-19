@@ -31,19 +31,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     @IBAction func settingsButtonClicked(_ sender: Any) {
         
-        let ref = Database.database().reference()
-        
-        if Auth.auth().currentUser != nil {
-            ref.child("users").observeSingleEvent(of: .value, with: { snapshot in
-                if snapshot.value != nil {
-                    let dict = snapshot.value as! Dictionary<String,Any>
-                    print(dict.keys)
-                    print(type(of: Array(dict.keys)))
-                    }
-                
-            })
-        }
-//        performSegue(withIdentifier: "toSettings", sender: Any.self)
+        performSegue(withIdentifier: "toSettings", sender: Any.self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
