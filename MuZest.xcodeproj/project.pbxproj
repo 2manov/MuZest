@@ -38,6 +38,8 @@
 		A425976221BF16B800DD2132 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425976121BF16B800DD2132 /* ProfileInteractor.swift */; };
 		A467ADE821C1696C00C12F17 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A467ADE721C1696C00C12F17 /* ProfileView.swift */; };
 		A482817021C9252C0088C728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A482816F21C9252B0088C728 /* Assets.xcassets */; };
+		A482817321C9A35E0088C728 /* FindUserTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A482817221C9A35E0088C728 /* FindUserTableView.swift */; };
+		A482817521C9A4270088C728 /* FindUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A482817421C9A4270088C728 /* FindUserTableViewCell.swift */; };
 		A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE663F219AD7E100E926A6 /* AuthView.swift */; };
 		A4BE6642219AD83300E926A6 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6641219AD83300E926A6 /* AuthProtocols.swift */; };
 		A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */; };
@@ -120,6 +122,8 @@
 		A425976121BF16B800DD2132 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		A467ADE721C1696C00C12F17 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A482816F21C9252B0088C728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A482817221C9A35E0088C728 /* FindUserTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUserTableView.swift; sourceTree = "<group>"; };
+		A482817421C9A4270088C728 /* FindUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUserTableViewCell.swift; sourceTree = "<group>"; };
 		A4BE663F219AD7E100E926A6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A4BE6641219AD83300E926A6 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		A4BE6643219AD8A500E926A6 /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 		71CF77AB21A63AC10054CBAC /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				A482817121C9A3250088C728 /* findUser */,
 				71CF77AD21A63B3F0054CBAC /* Feed.storyboard */,
 				71CF77B121A63BFA0054CBAC /* PostHeaderCell.swift */,
 				7185A2DB21A64485009D457B /* PostCell.swift */,
@@ -298,6 +303,15 @@
 				A482816F21C9252B0088C728 /* Assets.xcassets */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		A482817121C9A3250088C728 /* findUser */ = {
+			isa = PBXGroup;
+			children = (
+				A482817221C9A35E0088C728 /* FindUserTableView.swift */,
+				A482817421C9A4270088C728 /* FindUserTableViewCell.swift */,
+			);
+			path = findUser;
 			sourceTree = "<group>";
 		};
 		A4BE663E219AD77300E926A6 /* Auth */ = {
@@ -653,8 +667,10 @@
 				A4DA20C721C08BC800B14B01 /* SettingsConfigurator.swift in Sources */,
 				7125717421C07FE4007553B4 /* CreatePostViewController.swift in Sources */,
 				A4FC858F2185D6EC003F7DB1 /* RegisterView.swift in Sources */,
+				A482817321C9A35E0088C728 /* FindUserTableView.swift in Sources */,
 				A4BE6648219AD8F400E926A6 /* AuthInteractor.swift in Sources */,
 				A4BE6644219AD8A500E926A6 /* AuthConfigurator.swift in Sources */,
+				A482817521C9A4270088C728 /* FindUserTableViewCell.swift in Sources */,
 				A4BE6640219AD7E100E926A6 /* AuthView.swift in Sources */,
 				7125717921C0EE42007553B4 /* PlayerManager.swift in Sources */,
 				A4FC859B2185D962003F7DB1 /* RegisterProtocols.swift in Sources */,

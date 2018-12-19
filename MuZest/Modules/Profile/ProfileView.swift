@@ -38,6 +38,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
                 if snapshot.value != nil {
                     let dict = snapshot.value as! Dictionary<String,Any>
                     print(dict.keys)
+                    print(type(of: Array(dict.keys)))
                     }
                 
             })

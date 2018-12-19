@@ -20,6 +20,9 @@ class FeedTableViewController: UITableViewController {
         static let postCellDefaultHeight: CGFloat = 578.0
     }
     
+    @IBAction func searchButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toFind", sender: Any.self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
