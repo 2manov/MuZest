@@ -32,13 +32,6 @@
                                                 <constraint firstAttribute="height" constant="36" id="sJe-JY-d7w"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ix-Be-ywo">
-                                            <rect key="frame" x="338" y="13" width="64" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="64" id="5r5-vn-6q4"/>
-                                            </constraints>
-                                            <state key="normal" title="Follow"/>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nikita Tumanov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hm-tW-O5p">
                                             <rect key="frame" x="60" y="19" width="114" height="18"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -48,18 +41,14 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="JRF-z1-A8F" secondAttribute="bottom" constant="10" id="1y6-vj-ZCO"/>
-                                        <constraint firstItem="5Ix-Be-ywo" firstAttribute="top" secondItem="JaB-LX-5pt" secondAttribute="top" constant="13" id="6R6-z1-SoD"/>
-                                        <constraint firstAttribute="bottom" secondItem="5Ix-Be-ywo" secondAttribute="bottom" constant="13" id="BWI-8y-E2J"/>
                                         <constraint firstItem="JRF-z1-A8F" firstAttribute="leading" secondItem="JaB-LX-5pt" secondAttribute="leading" constant="12" id="U4a-1T-qeH"/>
                                         <constraint firstItem="2hm-tW-O5p" firstAttribute="top" secondItem="JaB-LX-5pt" secondAttribute="top" constant="19" id="Xl6-RG-PRo"/>
                                         <constraint firstItem="2hm-tW-O5p" firstAttribute="leading" secondItem="JRF-z1-A8F" secondAttribute="trailing" constant="12" id="n1V-oN-5wK"/>
-                                        <constraint firstAttribute="trailing" secondItem="5Ix-Be-ywo" secondAttribute="trailing" constant="12" id="pcR-az-MqA"/>
                                         <constraint firstItem="JRF-z1-A8F" firstAttribute="top" secondItem="JaB-LX-5pt" secondAttribute="top" constant="10" id="r2h-X1-gDC"/>
                                         <constraint firstAttribute="bottom" secondItem="2hm-tW-O5p" secondAttribute="bottom" constant="19" id="sAo-fB-xjP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="followButton" destination="5Ix-Be-ywo" id="w7A-Km-rFN"/>
                                     <outlet property="profileImageView" destination="JRF-z1-A8F" id="KgS-wW-dM1"/>
                                     <outlet property="usernameLabel" destination="2hm-tW-O5p" id="JeK-Zb-fgc"/>
                                 </connections>

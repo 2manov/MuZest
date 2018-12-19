@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgApp" translatesAutoresizingMaskIntoConstraints="NO" id="JZA-4S-Bl9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-kt-8RE">
                                 <rect key="frame" x="164" y="615" width="46" height="30"/>
                                 <state key="normal" title="Post"/>
@@ -35,7 +38,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Insert your comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iin-j2-rG8">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iin-j2-rG8">
                                 <rect key="frame" x="16" y="112" width="343" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -50,8 +53,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIK-KL-ESm">
-                                <rect key="frame" x="16" y="277" width="51" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIK-KL-ESm">
+                                <rect key="frame" x="16" y="277" width="103" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="n0Q-lE-kmx"/>
+                                </constraints>
                                 <state key="normal" title="Browse"/>
                                 <connections>
                                     <action selector="browseButtonClicked:" destination="xK7-XS-6Ag" eventType="touchUpInside" id="Ehb-9K-3eZ"/>
@@ -80,7 +86,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="m3O-FJ-0gL" secondAttribute="bottom" constant="10" id="BGf-34-hcI"/>
                                     <constraint firstItem="m3O-FJ-0gL" firstAttribute="top" secondItem="CYr-qI-PgO" secondAttribute="top" constant="10" id="N22-Fx-n2O"/>
@@ -103,22 +108,29 @@
                             <constraint firstItem="QVY-GD-blW" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" constant="16" id="9BJ-Bs-cC3"/>
                             <constraint firstItem="CYr-qI-PgO" firstAttribute="leading" secondItem="bIK-KL-ESm" secondAttribute="leading" id="Boj-wk-epo"/>
                             <constraint firstItem="iin-j2-rG8" firstAttribute="leading" secondItem="QVY-GD-blW" secondAttribute="leading" id="Crh-dS-l6H"/>
+                            <constraint firstItem="JZA-4S-Bl9" firstAttribute="trailing" secondItem="t7h-iz-VhW" secondAttribute="trailing" id="Fsp-UL-a8c"/>
                             <constraint firstItem="t7h-iz-VhW" firstAttribute="trailing" secondItem="iin-j2-rG8" secondAttribute="trailing" constant="16" id="Q9S-pX-4aZ"/>
                             <constraint firstItem="t7h-iz-VhW" firstAttribute="bottom" secondItem="hvV-kt-8RE" secondAttribute="bottom" constant="22" id="VUa-Wa-8v2"/>
                             <constraint firstItem="CYr-qI-PgO" firstAttribute="top" secondItem="bIK-KL-ESm" secondAttribute="bottom" constant="8" id="Vc8-C4-Bug"/>
                             <constraint firstItem="t7h-iz-VhW" firstAttribute="trailing" secondItem="CYr-qI-PgO" secondAttribute="trailing" constant="16" id="X25-A2-XXA"/>
                             <constraint firstItem="t7h-iz-VhW" firstAttribute="trailing" secondItem="hvV-kt-8RE" secondAttribute="trailing" constant="165" id="XLx-Pa-paP"/>
                             <constraint firstItem="bIK-KL-ESm" firstAttribute="leading" secondItem="nDa-rE-Sgx" secondAttribute="leading" id="ZBz-Nd-V4I"/>
+                            <constraint firstItem="JZA-4S-Bl9" firstAttribute="top" secondItem="t7h-iz-VhW" secondAttribute="top" id="cbd-In-ktp"/>
                             <constraint firstItem="CYr-qI-PgO" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" constant="16" id="f5C-wM-QLi"/>
                             <constraint firstItem="QVY-GD-blW" firstAttribute="top" secondItem="t7h-iz-VhW" secondAttribute="top" constant="19" id="ivB-cy-mrs"/>
+                            <constraint firstItem="JZA-4S-Bl9" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" id="qyY-ax-eSW"/>
                             <constraint firstItem="bIK-KL-ESm" firstAttribute="top" secondItem="nDa-rE-Sgx" secondAttribute="bottom" constant="8" id="rcF-9f-vYR"/>
                             <constraint firstItem="iin-j2-rG8" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" constant="16" id="tkR-lO-34h"/>
                             <constraint firstItem="hvV-kt-8RE" firstAttribute="leading" secondItem="t7h-iz-VhW" secondAttribute="leading" constant="164" id="ubB-o0-Q5V"/>
+                            <constraint firstItem="JZA-4S-Bl9" firstAttribute="bottom" secondItem="t7h-iz-VhW" secondAttribute="bottom" id="zDC-Sa-zoe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t7h-iz-VhW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create" id="PEl-WD-FMy"/>
                     <connections>
+                        <outlet property="browseButton" destination="bIK-KL-ESm" id="hUJ-g1-6Tt"/>
+                        <outlet property="postAboutLabel" destination="iin-j2-rG8" id="GFc-fb-gF7"/>
+                        <outlet property="postButton" destination="hvV-kt-8RE" id="ZWd-7u-h2r"/>
                         <outlet property="songAuthor" destination="NOZ-4W-Wf7" id="wo4-DM-Ibi"/>
                         <outlet property="songImage" destination="m3O-FJ-0gL" id="MDB-In-Gdm"/>
                         <outlet property="songName" destination="qxB-KX-0hc" id="VfU-pi-pWI"/>
@@ -439,6 +451,7 @@
         <image name="Pause" width="92" height="92"/>
         <image name="Play" width="92" height="92"/>
         <image name="Previous" width="40" height="38"/>
+        <image name="bgApp" width="640" height="1136"/>
         <image name="bgLogin" width="414" height="736"/>
         <image name="musical_notes" width="30" height="30"/>
         <image name="tum" width="794" height="794"/>

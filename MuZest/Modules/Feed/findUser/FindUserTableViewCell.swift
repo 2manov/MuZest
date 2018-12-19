@@ -34,6 +34,11 @@ class FindUserTableViewCell: UITableViewCell {
         profileImage.layer.borderColor = UIColor.lightGray.cgColor
         profileImage.layer.borderWidth = 2
         
+        followButton.layer.borderWidth = 1.0
+        followButton.layer.cornerRadius = 2.0
+        followButton.layer.borderColor = followButton.tintColor.cgColor
+        followButton.layer.masksToBounds = true
+        
     }
 
 

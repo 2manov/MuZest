@@ -12,7 +12,7 @@ import iTunesSearchAPI
 
 class CreatePostViewController: UIViewController {
     
-    let ref = Database.database().reference()
+  
     
     var song: SongModel?
 
@@ -25,6 +25,9 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var songAuthor: UILabel!
     
+    @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var browseButton: UIButton!
+    @IBOutlet weak var postAboutLabel: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +35,17 @@ class CreatePostViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        browseButton.layer.borderWidth = 1.0
+        browseButton.layer.cornerRadius = 2.0
+        browseButton.layer.borderColor = browseButton.tintColor.cgColor
+        browseButton.layer.masksToBounds = true
+        
+        postButton.layer.borderWidth = 1.0
+        postButton.layer.cornerRadius = 2.0
+        postButton.layer.borderColor = postButton.tintColor.cgColor
+        postButton.layer.masksToBounds = true
+        
+        
         updateVC()
     }
     
@@ -78,6 +92,8 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func postButtonClicked(_ sender: Any) {
         
+          let ref = Database.database().reference()
+        
         if self.song == nil {
             let alertController = UIAlertController(title: "Error", message: "Please browse some song", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -99,9 +115,15 @@ class CreatePostViewController: UIViewController {
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId!)
         newPostReference.setValue(["username": MyProfile.shared.username!,
-                                   "songDatails": self.song!,
+                                   "iTunesId": song?.iTunesId,
+                                   "songName": song?.name,
+                                   "artistName": song?.artistName,
+                                   "artworkUrl": song?.artworkUrl,
+                                   "iTunesPreviewUrl": song?.iTunesPreviewUrl,
+                                   "iTunesUrl": song?.iTunesUrl,
                                    "dt":today,
-                                   "time":time], withCompletionBlock: {
+                                   "time":time,
+                                   "post_about":postAboutLabel.text ?? ""], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 print(error!.localizedDescription)
@@ -109,13 +131,6 @@ class CreatePostViewController: UIViewController {
             }
             print("Success")
         })
-        
-        
-//        self.ref.child("users").child(username).setValue(["user_id": user.uid,
-//                                                                    "real_name": "",
-//                                                                    "profile_photo_url":"",
-//                                                                    "about":"",
-//                                                                    "follows":""])
         
     }
     
