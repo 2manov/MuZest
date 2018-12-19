@@ -51,15 +51,7 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        guard !searchText.isEmpty else {
-            correctUsers = [String : cellData]()
-            correctUserNames = []
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
-            return
-        }
-        
+
         correctUsers = dictUsers.filter {$0.key.lowercased().contains(searchText.lowercased())}
         correctUserNames = Array(correctUsers.keys)
         DispatchQueue.main.async{
@@ -96,15 +88,15 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
                 let dict = snapshot.value as! Dictionary<String,Any>
                 DispatchQueue.main.async {
                     self.userNames = Array(dict.keys)
-//                    self.correctUserNames = Array(dict.keys)
-                    self.getDataOfUsers()
+                    self.correctUserNames = Array(dict.keys)
+                    self.getDataOfUsers(with : self.userNames)
                 }
             }
         })
     }
     
-    private func getDataOfUsers() {
-        for el in self.userNames {
+    private func getDataOfUsers(with userNamesToFind : Array<String>) {
+        for el in userNamesToFind {
             ref.child("users").child(el).observeSingleEvent(of: .value, with: { snapshot in
             if snapshot.value != nil {
                 let dict = snapshot.value as! Dictionary<String,String>
@@ -115,11 +107,13 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
                                 print(error)
                             } else {
                                 DispatchQueue.main.async {
+                                    
                                     self.dictUsers[el] = cellData(userName: el,
                                                                   realName: dict["real_name"],
                                                                   followers: " ",
                                                                   photoData: data!
                                                                   )
+
 //                                    self.correctUsers[el] = self.dictUsers[el]
                                     self.tableView.reloadData()
                                 }
@@ -132,6 +126,7 @@ class FindUserTableView: UIViewController,UITableViewDataSource, UITableViewDele
                                                           followers: " ",
                                                           photoData: nil
                             )
+                            
 //                            self.correctUsers[el] = self.dictUsers[el]
                             self.tableView.reloadData()
                         }
