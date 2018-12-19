@@ -112,6 +112,20 @@ extension BrowseViewController: UITableViewDelegate {
         self.openPlayer(song: song)
     }
     
+    @IBAction func addButtonClicked(_ sender: Any) {
+        let buttonPosition:CGPoint = (sender as AnyObject).convert(CGPoint.zero, to:self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: buttonPosition)
+        let rowPath = indexPath![1]
+        
+        let n: Int! = self.navigationController?.viewControllers.count
+        let vc = self.navigationController?.viewControllers[n-2] as! CreatePostViewController
+        
+        vc.song = self.filteredSongs[rowPath]
+        
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
@@ -219,3 +233,17 @@ extension BrowseViewController: UIViewControllerPreviewingDelegate {
         return songDetailVC
     }
 }
+
+//extension UINavigationController {
+//
+//    ///Get previous view controller of the navigation stack
+//    func previousViewController() -> BrowseViewController?{
+//
+//        let lenght = self.viewControllers.count
+//
+//        let previousViewController: UIViewController? = lenght >= 2 ? self.viewControllers[lenght-2] : nil
+//
+//        return previousViewController
+//    }
+//
+//}

@@ -78,6 +78,8 @@ class MyProfile {
                         self.follow_names = dict["follows"]?.components(separatedBy: "\t")
                         self.follower_names = "".components(separatedBy: "\t")
                         self.post_ids =  "".components(separatedBy :"\t")
+                        self.photo = UIImage(named: "brendon")?.jpegData(compressionQuality: 0.5)
+                        self.loadPhotoStatus = true
                     }
                     
                 }

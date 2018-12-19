@@ -9,20 +9,23 @@
 import UIKit
 import Firebase
 
+struct Storyboard {
+    static let postCell = "PostCell"
+    static let postHeaderCell = "PostHeaderCell"
+    static let postHeaderHeight: CGFloat = 57.0
+    static let postCellDefaultHeight: CGFloat = 578.0
+}
+
 class FeedTableViewController: UITableViewController {
 
     var posts: [Post]?
     
-    struct Storyboard {
-        static let postCell = "PostCell"
-        static let postHeaderCell = "PostHeaderCell"
-        static let postHeaderHeight: CGFloat = 57.0
-        static let postCellDefaultHeight: CGFloat = 578.0
-    }
     
     @IBAction func searchButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "toFind", sender: Any.self)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +35,7 @@ class FeedTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
         self.tableView.rowHeight = 578
+        
     }
     
     func fetchPosts()

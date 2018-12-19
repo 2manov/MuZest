@@ -30,7 +30,7 @@ class ProfileView: UIViewController, ProfileViewProtocol {
     
     
     @IBAction func settingsButtonClicked(_ sender: Any) {
-        
+
         performSegue(withIdentifier: "toSettings", sender: Any.self)
     }
     
