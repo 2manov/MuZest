@@ -81,7 +81,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="There is will be only your posts " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-EI-jSi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -105,6 +105,7 @@
                                             <constraint firstItem="1gc-5K-mhu" firstAttribute="leading" secondItem="5gR-4N-Bep" secondAttribute="leading" id="8n9-kk-N0s"/>
                                             <constraint firstItem="oVm-hH-4Yg" firstAttribute="top" secondItem="HB2-r2-Wcq" secondAttribute="top" constant="10" id="As1-7h-ImJ"/>
                                             <constraint firstItem="ZmG-Ks-E9b" firstAttribute="height" secondItem="HB2-r2-Wcq" secondAttribute="height" id="B3e-4Y-hR2"/>
+                                            <constraint firstItem="ZmG-Ks-E9b" firstAttribute="leading" secondItem="HB2-r2-Wcq" secondAttribute="leading" id="OO6-v0-gXf"/>
                                             <constraint firstItem="5gR-4N-Bep" firstAttribute="leading" secondItem="wMo-9d-4l3" secondAttribute="leading" id="P1l-v6-y41"/>
                                             <constraint firstItem="wMo-9d-4l3" firstAttribute="leading" secondItem="hbK-Lu-pIH" secondAttribute="leading" id="QmC-gg-sch"/>
                                             <constraint firstItem="PA4-Ll-yhj" firstAttribute="top" secondItem="1gc-5K-mhu" secondAttribute="bottom" constant="25.5" id="Rxz-Sw-8RB"/>
@@ -121,6 +122,7 @@
                                             <constraint firstAttribute="height" constant="1000" id="pdP-6q-tph"/>
                                             <constraint firstItem="hbK-Lu-pIH" firstAttribute="leading" secondItem="HB2-r2-Wcq" secondAttribute="leading" constant="16" id="q61-hQ-5u4"/>
                                             <constraint firstItem="oVm-hH-4Yg" firstAttribute="centerX" secondItem="HB2-r2-Wcq" secondAttribute="centerX" id="qMz-E2-s8b"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZmG-Ks-E9b" secondAttribute="trailing" id="qN8-wm-J1U"/>
                                             <constraint firstItem="Yo0-mK-AnH" firstAttribute="centerX" secondItem="oVm-hH-4Yg" secondAttribute="centerX" id="rmx-Vc-5iI"/>
                                             <constraint firstItem="hbK-Lu-pIH" firstAttribute="top" secondItem="cz2-xl-FKs" secondAttribute="bottom" constant="10" id="sCz-Yf-4hw"/>
                                             <constraint firstItem="ZmG-Ks-E9b" firstAttribute="centerY" secondItem="HB2-r2-Wcq" secondAttribute="centerY" id="tYs-YX-MAf"/>

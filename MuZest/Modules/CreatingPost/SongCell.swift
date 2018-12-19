@@ -17,11 +17,6 @@ class SongCell: UITableViewCell {
     @IBOutlet var artworkImageView: UIImageView!
     @IBOutlet var playPauseButton: UIButton!
     
-    
-    @IBAction func addButtonClicked(_ sender: Any) {
-       
-    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

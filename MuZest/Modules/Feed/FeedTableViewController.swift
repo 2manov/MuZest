@@ -18,8 +18,8 @@ struct Storyboard {
 
 class FeedTableViewController: UITableViewController {
 
-    var posts: [Post]?
-    
+    var posts: Array<Post> = []
+    var post_ids : Array<String> = []
     
     @IBAction func searchButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "toFind", sender: Any.self)
@@ -29,60 +29,78 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fetchPosts()
+        self.loadPosts()
         
-        tableView.estimatedRowHeight = Storyboard.postCellDefaultHeight
-        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = Storyboard.postCellDefaultHeight
+//        tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
-        self.tableView.rowHeight = 578
+//        self.tableView.rowHeight = 300
         
     }
     
-    func fetchPosts()
-    {
-        self.posts = Post.fetchPosts()
-        self.tableView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        loadPosts()
+    }
+    
+    func loadPosts(){
+        let ref = Database.database().reference()
+        if MyProfile.shared.follow_names == nil {
+            return
+        }
+            ref.child("posts").observe(.value, with: { snapshot in
+                if ( snapshot.value is NSNull ) {
+                    print("not found")
+                } else {
+                    self.posts = []
+                    for child in (snapshot.children) {
+                        let snap = child as! DataSnapshot
+                        let dict = snap.value as! [String: String]
+                        if MyProfile.shared.follow_names!.contains(dict["username"]!) {
+                            DispatchQueue.main.async {
+                                self.posts.append(Post(
+                                        username: dict["username"]!,
+                                        song : SongModel(
+                                            iTunesId: dict["iTunesId"]!,
+                                            name: dict["songName"]!,
+                                            artistName: dict["artistName"]!,
+                                            artworkUrl: dict["artworkUrl"]!,
+                                            iTunesPreviewUrl: dict["iTunesPreviewUrl"]!,
+                                            iTunesUrl: dict["iTunesUrl"]!),
+                                        dt: dict["dt"]!,
+                                        time: dict["time"]!,
+                                        post_about: dict["post_about"] ?? ""
+                                    ))
+                            }
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            })
+        
+        
     }
     
 }
 
 extension FeedTableViewController
 {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if let posts = posts {
-            return posts.count
-        }
-        
-        return 0
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let _ = posts {
-            return 1
-        } else {
-            return 0
-        }
+        return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postCell, for: indexPath) as! PostCell
         
-        cell.post = self.posts?[indexPath.section]
-        cell.selectionStyle = .none
-        
+        cell.post = self.posts[indexPath.row]
+        cell.updateUI()
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.postHeaderCell) as! PostHeaderCell
-        
-        cell.post = self.posts?[section]
-        cell.backgroundColor = UIColor.white
-        
-        return cell
-    }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Storyboard.postHeaderHeight

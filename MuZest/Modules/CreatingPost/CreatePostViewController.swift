@@ -12,8 +12,6 @@ import iTunesSearchAPI
 
 class CreatePostViewController: UIViewController {
     
-  
-    
     var song: SongModel?
 
     @IBAction func browseButtonClicked(_ sender: Any) {
